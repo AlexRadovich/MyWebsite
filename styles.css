@@ -9,3 +9,29 @@ h2 {
     margin: 5px;
     padding: 11px;
 }
+
+.top-bar{
+    height: 30px;
+    width: 105%;
+    background-color: #97161d;
+    margin-top: -8px;
+    margin-left: -9px;
+    padding: 2px;
+}
+
+
+.box-icon{
+    height: 110%;
+    width: 32px;
+    margin-top: -2px;
+    margin-left: -2px;
+
+
+}
+
+.on-page{
+    background-color: #7c1218;
+}
+.off-page{
+    background-color: #97161d;
+}
