@@ -35,3 +35,12 @@ h2 {
 .off-page{
     background-color: #97161d;
 }
+
+.node{
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background-color: blue;
+    text-align: center;
+    color: white;
+}
