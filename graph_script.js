@@ -1,25 +1,38 @@
-class Graph {
-    constructor(nodes = []) {
-        this.nodes = nodes
-    }
-    createNode(){
-        console.log("Node created1");
+let nodeCount = 0;
+let nodelist = []
 
-        const created_node = new Node()
-        this.nodes.push(created_node)
-        console.log(nodeCount);
-        
+class Graph {
+    createNode(x,y){
+        console.log("Node created");
+        const created_node = new Node(nodeCount++,x,y);
+        nodelist.push(created_node);
+        console.log(created_node.name);
+        const nodeElement = created_node.createElement();
+        document.body.appendChild(nodeElement);
     }
 
 }
+const theGraph = new Graph()
+
 
 class Node {
-    constructor(name,edges) {
+    constructor(name,x,y) {
         this.name = name;
-        this.edges = edges || [];
+        this.x = x;
+        this.y = y;
+        this.element = null;
     }
+    createElement() {
+        const nodeElement = document.createElement('div');
+        nodeElement.classList.add('node');
+        nodeElement.style.left = `${this.x - 25}px`; // Center the node at the click position
+        nodeElement.style.top = `${this.y - 25}px`;  // Center the node at the click position
+        nodeElement.textContent = this.name;
+        this.element = nodeElement;
 
+        return this.element;
     
+        }
 }
 
 class Edge {
@@ -31,8 +44,6 @@ class Edge {
 
 }
 
-let nodeCount = 0;
-const theGraph = new Graph()
 
 function on_load() {
     console.log("Page has been loaded");
@@ -42,8 +53,13 @@ function yell(){
     console.log("HERE")
 }
 
-document.addEventListener('click',theGraph.createNode);
+document.body.addEventListener('click', (event) => {
+    const x = event.clientX;
+    const y = event.clientY;
 
+    // Use the NodeManager to create and add a new node
+    theGraph.createNode(x, y);
+});
 document.addEventListener('DOMContentLoaded', on_load());
 
 
