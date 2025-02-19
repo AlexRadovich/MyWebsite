@@ -75,7 +75,7 @@ document.body.addEventListener('click', (event) => {
     const y = event.clientY;
 
     if(clicked_on_node(x,y)){
-        yell()
+        yell();
     }
     else{
         theGraph.createNode(x, y);
