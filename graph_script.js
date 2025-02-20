@@ -1,4 +1,5 @@
 let nodeCount = 0;
+let edgeCount = 0;
 let nodelist = [];
 let node_positions = [];
 let node_position_found = 0;
@@ -13,8 +14,10 @@ class Graph {
         document.body.appendChild(nodeElement);
     }
     createEdge(x,y){
-        console.log("Node created");
-
+        console.log("Edge created");
+        const created_edge = new Edge(edgeCount++,x,y);
+        const edgeElement = created_edge.createElement();
+        document.body.appendChild(edgeElement);
     }
 
 }
@@ -42,11 +45,22 @@ class Node {
 }
 
 class Edge {
-    constructor(node1, node2, name) {
+    constructor(name, x, y) {
         this.name = name || [];
-        this.node1 = node1;
-        this.node2 = node2;
+        this.x = x;
+        this.y = y;
     }
+    createElement() {
+        const edgeElement = document.createElement('div');
+        edgeElement.classList.add('edge');
+        edgeElement.style.left = `${this.x - 25}px`; // Center the node at the click position
+        edgeElement.style.top = `${this.y - 25}px`;  // Center the node at the click position
+        edgeElement.textContent = this.name;
+        this.element = edgeElement;
+
+        return this.element;
+    
+        }
 
 }
 
@@ -60,7 +74,7 @@ function yell(){
 }
 function clicked_on_node(x,y){
     node_position_found = 0;
-    for(let i = 0;i<nodelist.length-1;i++){
+    for(let i = 0;i < nodelist.length;i++){
         let x_pos = node_positions[i][0]
         let y_pos = node_positions[i][1]
         if((Math.abs(x-x_pos) <= 20) && (Math.abs(y-y_pos)<=20)){
@@ -75,7 +89,7 @@ document.body.addEventListener('click', (event) => {
     const y = event.clientY;
 
     if(clicked_on_node(x,y)){
-        yell()
+        theGraph.createEdge(x,y)
     }
     else{
         theGraph.createNode(x, y);

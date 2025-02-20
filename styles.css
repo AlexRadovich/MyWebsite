@@ -46,3 +46,10 @@ h2 {
     color: white;
     border-radius: 50%;
 }
+
+.edge{
+    position: absolute;
+    width: 100px;
+    height: 10px;
+    background-color: #7c1218;
+}
