@@ -34,8 +34,8 @@ class Node {
     createElement() {
         const nodeElement = document.createElement('div');
         nodeElement.classList.add('node');
-        nodeElement.style.left = `${this.x - 25}px`; // Center the node at the click position
-        nodeElement.style.top = `${this.y - 25}px`;  // Center the node at the click position
+        nodeElement.style.left = `${this.x - 25}px`;
+        nodeElement.style.top = `${this.y - 25}px`;
         nodeElement.textContent = this.name;
         this.element = nodeElement;
 
@@ -46,15 +46,15 @@ class Node {
 
 class Edge {
     constructor(name, x, y) {
-        this.name = name || [];
+        this.name = name;
         this.x = x;
         this.y = y;
     }
     createElement() {
         const edgeElement = document.createElement('div');
         edgeElement.classList.add('edge');
-        edgeElement.style.left = `${this.x - 25}px`; // Center the node at the click position
-        edgeElement.style.top = `${this.y - 25}px`;  // Center the node at the click position
+        edgeElement.style.left = `${this.x}px`;
+        edgeElement.style.top = `${this.y}px`;
         edgeElement.textContent = this.name;
         this.element = edgeElement;
 
