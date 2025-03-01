@@ -2,7 +2,9 @@ let nodeCount = 0;
 let edgeCount = 0;
 let nodelist = [];
 let node_positions = [];
-let currentNodeForEdge = null
+let currentNodeForEdge = null;
+
+let LineGraphButton = 0;
 
 class Graph {
     createNode(x, y) {
@@ -99,6 +101,23 @@ document.body.addEventListener('mousemove', (event) => {
         edgeInProgress.updatePosition(event.clientX, event.clientY);
     }
 });
+
+
+const button = document.getElementById("button")
+button.addEventListener('click', function(event) {
+    event.stopPropagation();
+    if(LineGraphButton){
+        button.textContent = "yeah"
+        button.classList = "sidebar-button button-off"
+        LineGraphButton = 0
+    }
+    else{
+        button.textContent = "Line Graph"
+        button.classList = "sidebar-button button-on"
+        LineGraphButton = 1
+    }
+});
+
 
 document.body.addEventListener('click', (event) => {
     const x = event.clientX;

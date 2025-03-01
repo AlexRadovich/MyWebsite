@@ -35,6 +35,32 @@ h2 {
 .off-page{
     background-color: #97161d;
 }
+.sidebar{
+    height: 30%;
+    width: 16.5%;
+    background-color: rgb(49, 65, 110);
+    margin-left: 83%;
+    margin-top: 20%;
+    padding: 6px;
+}
+
+.sidebar-button{
+    height: 20%;
+    width: 100%;
+    background-color: rgb(120, 120, 210);
+    text-align: center;
+    font-size: 105%;
+    color: black;
+    padding-top: 9%;
+    box-shadow:3px 3px 2px black;
+
+}
+.button-on{
+    box-shadow:3px 3px 2px black;
+}
+.button-off{
+    box-shadow: inset 3px 3px 2px black;
+}
 
 .node{
     position: absolute;
