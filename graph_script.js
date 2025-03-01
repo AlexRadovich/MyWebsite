@@ -103,7 +103,8 @@ document.body.addEventListener('mousemove', (event) => {
 });
 
 
-const button = document.getElementById("button")
+const button = document.getElementById("button");
+const sidebar = document.getElementById("sidebar");
 button.addEventListener('click', function(event) {
     event.stopPropagation();
     if(LineGraphButton){
@@ -117,7 +118,9 @@ button.addEventListener('click', function(event) {
         LineGraphButton = 1
     }
 });
-
+sidebar.addEventListener('click', function(event) {
+    event.stopPropagation();
+});
 
 document.body.addEventListener('click', (event) => {
     const x = event.clientX;
