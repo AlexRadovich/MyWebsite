@@ -118,9 +118,9 @@ button.addEventListener('click', function(event) {
         LineGraphButton = 1
     }
 });
-sidebar.addEventListener('click', function(event) {
-    event.stopPropagation();
-});
+// sidebar.addEventListener('click', function(event) {
+//     event.stopPropagation();
+// });
 
 document.body.addEventListener('click', (event) => {
     const x = event.clientX;
