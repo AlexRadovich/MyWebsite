@@ -1,47 +1,68 @@
-<!DOCTYPE = html>
-<html>
-
-    <head>
-        <title>Alexander Radovich's Website</title>
-        <meta name = "description" content = "Alexander Radovich's Website">
-        <link rel = "stylesheet" href = "styles.css">
-
-    </head>
-
-
-    <body>
-        <div class = "top-bar">
-            
-            <div class = "box-icon on-page">
-                <img src = "HouseIcon.png" width = 100% >
-            </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Alexander Radovich</title>
+    <meta name="description" content="Alexander Radovich's personal website showcasing projects, certifications, and skills.">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="scroll_animation.js" defer></script>
+</head>
+<body>
+    <header class="top-bar">
+        <div class="container">
+            <img src="HouseIcon.png" alt="Home Icon" class="icon" />
+            <h1>Hello! I'm Alex Radovich</h1>
         </div>
-        <h2>Hello!</h2>
-        <div class = "text-box">
+    </header>
+
+    <main class="card-wrapper">
+        <section class="card fade-in">
+            <h2>About Me </h2>
             <p>
-                My name is Alexander Radovich, I am a Sophomore at Colgate University double majoring in Applied Mathematics and Computer Science
+                I am a junior at Colgate University double majoring in <strong>Applied Mathematics</strong> and <strong>Computer Science</strong>, with a passion for machine learning and software engineering.
             </p>
-        </div>
-
-        <section>
-            <h3>Where I am around the web:</h3>
+            <h3>Find Me Online</h3>
             <ul>
-                <li> <a href = "https://github.com/AlexRadovich">My Github</a></li>
-                <li> <a href = "https://www.linkedin.com/in/alexander-radovich-455846294/">My Linkedin</a></li>
+                <li><a href="https://github.com/AlexRadovich" target="_blank">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/alexander-radovich-455846294/" target="_blank">LinkedIn</a></li>
             </ul>
+        <a href = "about_me.html">More about me</a>
         </section>
 
-        <section>
-            <h3>My certifications:</h3>
+        <section class="card fade-in">
+            <h2>Skills and Certifications</h2>
+
+            <p><strong>Certifications:</strong></p>
             <ul>
-                <li> <a href = "https://www.coursera.org/account/accomplishments/records/91CYAMOVCXNM">Supervised Machine Learning - Stanford University, Deeplearning.AI</a></li>
+                <li>
+                    <a href="https://www.coursera.org/account/accomplishments/records/91CYAMOVCXNM" target="_blank">
+                        Supervised Machine Learning — Stanford / DeepLearning.AI
+                    </a>
+                </li>
             </ul>
+            <p><strong>Languages/Tools:</strong> Python, Java, C, HTML, CSS, JavaScript, MATLAB, PyTorch, Git, FastAPI, NumPy, React, MongoDB, etc etc..</p>
+            <a href="my_skills.html">Skills Overview</a>
+
         </section>
 
-        <h3><a href = "my_skills.html"> My skills</a></h3>
-        <h3><a href = "graph_page.html"> Graph Theory Calculator</a></h3>
+        <section class="card fade-in">
+            <h2>Project Pages</h2>
+            <ul>
+                <li><a href="graph_page.html">Graph Theory Visualizer/Calculator</a></li>
+            </ul>
 
+        </section>
+        
+        <section style = "padding-top: 7px;">
+            <p>
+                <a href="Alex_Radovich_ML_Intern-1.png" download class="sidebar-button"> Download My Resume</a>
+            </p>
+            <section class = "sidebar-button">
+                <a style = "color: rgb(255, 255, 255)"  href = "resume.html"> Or just view it</a>
+            </section>
+        </section>
 
-
-    </body>
+    </main>
+</body>
 </html>

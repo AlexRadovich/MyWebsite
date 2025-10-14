@@ -1,144 +1,103 @@
-<!DOCTYPE = html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>My Skills</title>
-    <link rel = "stylesheet" href = "styles.css">
-
+    <meta charset="UTF-8">
+    <title>My Skills – Alexander Radovich</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
-    <div class = "top-bar">
-            
-        <div class = "box-icon off-page">
+    <header class="top-bar">
+        <div class="container">
             <a href="index.html">
-                <img src="HouseIcon.png"width=100%>
+                <img src="HouseIcon.png" alt="Home" class="icon">
             </a>
-
+            <h1>My Skills</h1>
         </div>
-    </div>
-    
-    <section>
+    </header>
 
-        <h4>Development Skills:</h4>
-        <table border="3">
-            <tr>
-                <th>Skill</th>
-                <th>Usage</th>
-                <th>Years of Experience</th>
-            </tr>
-            <tr>
-                <td>Python</td>
-                <td>Personal, Academic</td>
-                <td>3</td>
-            </tr>
-            <tr>
-                <td>C</td>
-                <td>Personal, Academic</td>
-                <td> <1 </td>
-            </tr>
-            <tr>
-                <td>Java</td>
-                <td>Personal, Academic</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>CSS</td>
-                <td>Personal</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>JavaScript</td>
-                <td>Personal</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>HTML</td>
-                <td>Personal</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>GDScript</td>
-                <td>Personal</td>
-                <td>3</td>
-            </tr>
-        </table>
-    </section>
-    <section>
-        <h4>Math Skills:</h4>
-        <table border="3">
-            <tr>
-                <th>Skill</th>
-                <th>Usage</th>
-                <th>Years of Experience</th>
-            </tr>
-            <tr>
-                <td>MatLab</td>
-                <td>Academic</td>
-                <td>1</td>
-            </tr>
-            <tr>
-                <td>Calculus</td>
-                <td>Personal, Academic</td>
-                <td> 2 </td>
-            </tr>
-            <tr>
-                <td>Linear Algebra</td>
-                <td>Personal, Academic</td>
-                <td> 1 </td>
-            </tr>
-            
+    <main class="container">
+        <section>
+            <h2>Development Skills</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Usage</th>
+                            <th>Years of Experience</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Git/Github</td><td>Personal</td><td>4</td></tr>
+                        <tr><td>React</td><td>Personal</td><td>1</td></tr>
+                        <tr><td>Python</td><td>Professional, Personal, Academic</td><td>5</td></tr>
+                        <tr><td>NumPy</td><td>Professional, Personal</td><td>2</td></tr>                        
+                        <tr><td>XG Boost</td><td>Professional, Personal</td><td>1</td></tr>                        
+                        <tr><td>Jupyter Notebooks</td><td>Professional, Personal</td><td>1</td></tr>                                               
+                        <tr><td>C</td><td>Personal, Academic</td><td>2</td></tr>
+                        <tr><td>Assembly</td><td>Academic</td><td>1</td></tr>                        
+                        <tr><td>Java</td><td>Personal, Academic</td><td>3</td></tr>
+                        <tr><td>CSS</td><td>Personal</td><td>3</td></tr>
+                        <tr><td>MongoDB</td><td>Personal</td><td>2</td></tr>
+                        <tr><td>Firebase</td><td>Personal</td><td>2</td></tr>
+                        <tr><td>JavaScript</td><td>Personal</td><td>2</td></tr>
+                        <tr><td>HTML</td><td>Personal</td><td>3</td></tr>
+                        <tr><td>GDScript</td><td>Personal</td><td>4</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        </table>
-    </section>
-    <section>
-        <h4>Applied Skills:</h4>
-        <table border="3">
-            <tr>
-                <th>Skill</th>
-                <th>Usage</th>
-                <th>Years of Experience</th>
-            </tr>
-            <tr>
-                <td>Machine Learning</td>
-                <td>Personal</td>
-                <td><1</td>
-            </tr>
-            <tr>
-                <td>SciKit-Learn</td>
-                <td>Personal</td>
-                <td> <1 </td>
-            </tr>
-            <tr>
-                <td>NumPy</td>
-                <td>Personal</td>
-                <td> 1 </td>
-            </tr>
-            <tr>
-                <td>Math Systems Modeling</td>
-                <td>Academic</td>
-                <td> <1 </td>
-            </tr>
-            <tr>
-                <td>Unity Engine</td>
-                <td>Personal</td>
-                <td> 2 </td>
-            </tr>
-            <tr>
-                <td>Godot</td>
-                <td>Personal</td>
-                <td> 3 </td>
-            </tr>
-            <tr>
-                <td>Blender</td>
-                <td>Personal</td>
-                <td> 1 </td>
-            </tr>
+        <section>
+            <h2>Math Skills</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Usage</th>
+                            <th>Years of Experience</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr><td>Graph Theory</td><td>Personal, Academic</td><td>1</td></tr>
+                        <tr><td>MatLab</td><td>Academic</td><td>3</td></tr>
+                        <tr><td>Calculus</td><td>Personal, Academic</td><td>4</td></tr>
+                        <tr><td>Linear Algebra</td><td>Professional, Personal, Academic</td><td>3</td></tr>
+                        <tr><td>LaTeX</td><td>Personal, Academic</td><td>2</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
 
-        </table>
-    </section>
+        <section>
+            <h2>Applied Skills</h2>
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Usage</th>
+                            <th>Years of Experience</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr><td>Machine Learning</td><td>Professional, Personal</td><td>2</td></tr>
+                        <tr><td>Slack</td><td>Professional, Personal</td><td>1</td></tr>
+                        <tr><td>Figma</td><td>Professional, Personal</td><td>1</td></tr>
+                        <tr><td>Scrum</td><td>Professional, Personal</td><td>1</td></tr>
+                        <tr><td>Math Systems Modeling</td><td>Academic</td><td>2</td></tr>
+                        <tr><td>Unity Engine</td><td>Personal</td><td>2</td></tr>
+                        <tr><td>Godot</td><td>Personal</td><td>3</td></tr>
+                        <tr><td>Blender</td><td>Personal</td><td>1</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
 
 
 </body>
-
-
 </html>
