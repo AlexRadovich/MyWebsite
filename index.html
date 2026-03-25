@@ -1,71 +1,648 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>  
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Alexander Radovich</title>
-    <meta name="description" content="Alexander Radovich's personal website showcasing projects, certifications, and skills.">
-    <link rel="stylesheet" href="styles.css" />
-    <script src="scroll_animation.js" defer></script>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Alexander Radovich</title>
+  <meta name="description" content="Alexander Radovich — Applied Mathematics & Computer Science at Colgate University. ML engineer, builder, researcher.">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --red: #97161d;
+      --red-light: #c12028;
+      --red-muted: #f5e8e8;
+      --ink: #1a1a1a;
+      --ink-2: #3d3d3d;
+      --ink-3: #6b6b6b;
+      --rule: #e2e2e2;
+      --bg: #faf9f7;
+      --white: #ffffff;
+      --mono: 'DM Mono', monospace;
+      --serif: 'DM Serif Display', serif;
+      --sans: 'DM Sans', sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(250,249,247,0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--rule);
+      padding: 0 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 56px;
+    }
+    .nav-logo {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      color: var(--ink);
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-size: 0.82rem; font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--ink-3);
+      text-decoration: none; transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--red); }
+
+    /* ── HERO ── */
+    .hero {
+      min-height: 100vh;
+      padding: 120px 2.5rem 80px;
+      display: flex; align-items: center;
+      max-width: 1100px; margin: 0 auto;
+      position: relative;
+    }
+    .hero-inner { max-width: 680px; }
+    .hero-tag {
+      font-family: var(--mono);
+      font-size: 0.78rem; letter-spacing: 0.1em;
+      color: var(--red); text-transform: uppercase;
+      margin-bottom: 1.5rem;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .hero-tag::before {
+      content: ''; display: inline-block;
+      width: 24px; height: 1px; background: var(--red);
+    }
+    h1.hero-name {
+      font-family: var(--serif);
+      font-size: clamp(3rem, 7vw, 5.5rem);
+      line-height: 1.05;
+      color: var(--ink);
+      margin-bottom: 1.5rem;
+      letter-spacing: -0.02em;
+    }
+    h1.hero-name em {
+      font-style: italic;
+      color: var(--red);
+    }
+    .hero-desc {
+      font-size: 1.05rem; font-weight: 300; color: var(--ink-2);
+      max-width: 520px; line-height: 1.75; margin-bottom: 2.5rem;
+    }
+    .hero-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 0.4rem;
+      padding: 0.65rem 1.4rem;
+      border-radius: 3px;
+      font-size: 0.85rem; font-weight: 500; letter-spacing: 0.04em;
+      text-decoration: none; transition: all 0.2s;
+      cursor: pointer; border: none;
+    }
+    .btn-primary {
+      background: var(--red); color: #fff;
+    }
+    .btn-primary:hover { background: var(--red-light); }
+    .btn-outline {
+      background: transparent; color: var(--ink);
+      border: 1px solid var(--rule);
+    }
+    .btn-outline:hover { border-color: var(--ink-3); background: var(--white); }
+
+    .hero-stats {
+      position: absolute; right: 0; top: 50%;
+      transform: translateY(-50%);
+      display: flex; flex-direction: column; gap: 2rem;
+      padding-right: 2rem;
+    }
+    .stat-item { text-align: right; }
+    .stat-num {
+      font-family: var(--serif); font-size: 2.2rem;
+      color: var(--ink); line-height: 1;
+    }
+    .stat-label {
+      font-family: var(--mono); font-size: 0.72rem;
+      color: var(--ink-3); letter-spacing: 0.06em;
+      text-transform: uppercase; margin-top: 0.25rem;
+    }
+
+    /* ── SECTION WRAPPER ── */
+    section { max-width: 1100px; margin: 0 auto; padding: 80px 2.5rem; }
+    .section-rule {
+      display: flex; align-items: center; gap: 1rem;
+      margin-bottom: 3rem;
+    }
+    .section-label {
+      font-family: var(--mono); font-size: 0.75rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--red); white-space: nowrap;
+    }
+    .section-rule::after {
+      content: ''; flex: 1; height: 1px; background: var(--rule);
+    }
+
+    /* ── EXPERIENCE TIMELINE ── */
+    .timeline { display: flex; flex-direction: column; gap: 0; }
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 140px 1px 1fr;
+      gap: 0 2rem;
+      padding-bottom: 3rem;
+    }
+    .timeline-item:last-child { padding-bottom: 0; }
+    .t-date {
+      font-family: var(--mono); font-size: 0.75rem;
+      color: var(--ink-3); letter-spacing: 0.04em;
+      padding-top: 0.15rem; text-align: right;
+    }
+    .t-line {
+      position: relative; background: var(--rule);
+    }
+    .t-line::before {
+      content: '';
+      position: absolute; top: 8px; left: 50%;
+      transform: translateX(-50%);
+      width: 9px; height: 9px; border-radius: 50%;
+      border: 2px solid var(--red);
+      background: var(--bg);
+    }
+    .t-content { padding-top: 0; }
+    .t-role {
+      font-size: 1rem; font-weight: 500; color: var(--ink);
+      margin-bottom: 0.2rem;
+    }
+    .t-org {
+      font-family: var(--mono); font-size: 0.78rem;
+      color: var(--red); margin-bottom: 0.75rem;
+    }
+    .t-bullets { list-style: none; padding: 0; }
+    .t-bullets li {
+      font-size: 0.9rem; color: var(--ink-2);
+      padding-left: 1.1rem; position: relative;
+      margin-bottom: 0.45rem; line-height: 1.6;
+    }
+    .t-bullets li::before {
+      content: '→'; position: absolute; left: 0;
+      color: var(--red); font-size: 0.75rem;
+    }
+    .t-badge {
+      display: inline-block;
+      background: var(--red-muted); color: var(--red);
+      font-family: var(--mono); font-size: 0.72rem;
+      padding: 0.25rem 0.65rem; border-radius: 2px;
+      margin-top: 0.75rem; letter-spacing: 0.04em;
+    }
+    .t-upcoming {
+      background: #f9f9f9; border: 1px dashed var(--rule);
+      border-radius: 4px; padding: 1.2rem 1.5rem;
+    }
+    .t-upcoming .t-role { color: var(--ink-3); }
+    .t-upcoming-label {
+      font-family: var(--mono); font-size: 0.7rem;
+      color: var(--ink-3); letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 0.4rem;
+    }
+
+    /* ── PROJECTS ── */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.75rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none; color: inherit;
+      display: flex; flex-direction: column;
+    }
+    .project-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.07);
+    }
+    .project-card.featured {
+      border-left: 3px solid var(--red);
+    }
+    .proj-type {
+      font-family: var(--mono); font-size: 0.7rem;
+      color: var(--ink-3); letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 0.75rem;
+    }
+    .proj-title {
+      font-family: var(--serif); font-size: 1.3rem;
+      color: var(--ink); margin-bottom: 0.5rem; line-height: 1.2;
+    }
+    .proj-desc {
+      font-size: 0.88rem; color: var(--ink-2);
+      line-height: 1.65; margin-bottom: 1.25rem; flex: 1;
+    }
+    .proj-stat {
+      font-family: var(--mono); font-size: 0.8rem;
+      color: var(--red); margin-bottom: 1rem; font-weight: 500;
+    }
+    .proj-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .tag {
+      font-family: var(--mono); font-size: 0.68rem;
+      background: #f3f3f1; color: var(--ink-3);
+      padding: 0.2rem 0.55rem; border-radius: 2px;
+      letter-spacing: 0.04em;
+    }
+    .proj-link {
+      margin-top: 1rem; font-size: 0.8rem; font-weight: 500;
+      color: var(--red); text-decoration: none;
+      font-family: var(--mono); letter-spacing: 0.04em;
+      display: inline-flex; align-items: center; gap: 0.3rem;
+    }
+    .proj-link:hover { text-decoration: underline; }
+
+    /* ── ML SHOWCASE ── */
+    .ml-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+    @media (max-width: 700px) { .ml-grid { grid-template-columns: 1fr; } }
+    .ml-card {
+      background: var(--white); border: 1px solid var(--rule);
+      border-radius: 4px; padding: 1.75rem;
+    }
+    .ml-icon {
+      font-family: var(--mono); font-size: 1.5rem;
+      color: var(--red); margin-bottom: 1rem; display: block;
+    }
+    .ml-title {
+      font-size: 0.95rem; font-weight: 500; margin-bottom: 0.5rem;
+    }
+    .ml-detail {
+      font-size: 0.85rem; color: var(--ink-2); line-height: 1.65;
+    }
+    .ml-metric {
+      margin-top: 1rem;
+      font-family: var(--mono); font-size: 0.78rem;
+      color: var(--red);
+    }
+
+    /* ── SKILLS ── */
+    .skills-layout {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+    @media (max-width: 800px) { .skills-layout { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 500px) { .skills-layout { grid-template-columns: 1fr; } }
+    .skill-group h3 {
+      font-family: var(--mono); font-size: 0.72rem;
+      color: var(--red); letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 1rem;
+      padding-bottom: 0.5rem; border-bottom: 1px solid var(--rule);
+    }
+    .skill-list { list-style: none; }
+    .skill-list li {
+      font-size: 0.88rem; color: var(--ink-2);
+      padding: 0.3rem 0; border-bottom: 1px solid #f0f0ee;
+      display: flex; justify-content: space-between;
+    }
+    .skill-yrs {
+      font-family: var(--mono); font-size: 0.72rem;
+      color: var(--ink-3);
+    }
+
+    /* ── FOOTER ── */
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2.5rem;
+      display: flex; align-items: center; justify-content: space-between;
+      max-width: 1100px; margin: 0 auto;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .footer-name {
+      font-family: var(--serif); font-size: 1rem; color: var(--ink-3);
+    }
+    .footer-links { display: flex; gap: 1.5rem; }
+    .footer-links a {
+      font-family: var(--mono); font-size: 0.75rem;
+      letter-spacing: 0.06em; color: var(--ink-3);
+      text-decoration: none; text-transform: uppercase;
+    }
+    .footer-links a:hover { color: var(--red); }
+
+    /* ── FADE IN ON SCROLL ── */
+    .reveal {
+      opacity: 0; transform: translateY(20px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .hero-stats { display: none; }
+      .nav-links { display: none; }
+      .timeline-item { grid-template-columns: 1fr; gap: 0.5rem; }
+      .t-line { display: none; }
+      .t-date { text-align: left; }
+    }
+    @media (max-width: 600px) {
+      nav { padding: 0 1.25rem; }
+      .hero { padding: 100px 1.25rem 60px; }
+      section { padding: 60px 1.25rem; }
+      .projects-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
-    <header class="top-bar">
-        <div class="container">
-            <img src="HouseIcon.png" alt="Home Icon" class="icon" />
-            <h1>Hello! I'm Alex Radovich</h1>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">Alexander Radovich</a>
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#ml">ML Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="about_me.html">About</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <div class="hero-tag">Applied Math & CS — Colgate University</div>
+      <h1 class="hero-name">Alexander<br><em>Radovich</em></h1>
+      <p class="hero-desc">
+        Junior building at the intersection of machine learning and applied mathematics. |
+        Former ML Engineering Intern at DMEA 
+      </p>
+      <div class="hero-links">
+        <a href="AlexRadovich_ML_Intern.png" download class="btn btn-primary">Download Resume</a>
+        <a href="https://github.com/AlexRadovich" target="_blank" class="btn btn-outline">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/alexander-radovich-455846294/" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">3.8</div>
+        <div class="stat-label">GPA / 4.0</div>
+      </div>
+      
+    </div>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="section-rule">
+      <span class="section-label">Experience</span>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="t-date">Summer 2026</div>
+        <div class="t-line"></div>
+        <div class="t-content">
+          <div class="t-upcoming">
+            <div class="t-upcoming-label">Upcoming</div>
+            <div class="t-role">Machine Learning Summer Research — University of Maryland</div>
+            <p style="font-size:0.85rem;color:#999;margin-top:0.5rem;"> Machine Learning for Autonomous Driving research under the mentorship of Dr. Ming Lin</p>
+          </div>
         </div>
-    </header>
+      </div>
 
-    <main class="card-wrapper">
-        <section class="card fade-in">
-            <h2>About Me </h2>
-            <p>
-                I am a junior at Colgate University double majoring in <strong>Applied Mathematics</strong> and <strong>Computer Science</strong>, with a passion for machine learning and software engineering.
-            </p>
-            <h3>Find Me Online</h3>
-            <ul>
-                <li><a href="https://github.com/AlexRadovich" target="_blank">GitHub</a></li>
-                <li><a href="https://www.linkedin.com/in/alexander-radovich-455846294/" target="_blank">LinkedIn</a></li>
-            </ul>
-        <a href = "about_me.html">More about me</a>
-        </section>
+      <div class="timeline-item reveal">
+        <div class="t-date">Jun–Aug 2025</div>
+        <div class="t-line"></div>
+        <div class="t-content">
+          <div class="t-role">Machine Learning Engineering / IT Intern</div>
+          <div class="t-org">DMEA — Montrose, CO</div>
+          <ul class="t-bullets">
+            <li>Built end-to-end neural network models (R² = 0.98) in Python/scikit-learn to forecast revenue, supporting business-critical financial planning.</li>
+            <li>Engineered data pipelines for 100k+ row datasets with Yeo–Johnson normalization, one-hot encoding, and automated retraining utilities.</li>
+            <li>Delivered all project milestones ahead of schedule; secured a return internship offer for technical execution and initiative.</li>
+          </ul>
+          <span class="t-badge">↩ Return offer secured</span>
+        </div>
+      </div>
 
-        <section class="card fade-in">
-            <h2>Skills and Certifications</h2>
+    </div>
+  </section>
 
-            <p><strong>Certifications:</strong></p>
-            <ul>
-                <li>
-                    <a href="https://www.coursera.org/account/accomplishments/records/91CYAMOVCXNM" target="_blank">
-                        Supervised Machine Learning — Stanford / DeepLearning.AI
-                    </a>
-                </li>
-            </ul>
-            <p><strong>Languages/Tools:</strong> Python, Java, C, HTML, CSS, JavaScript, MATLAB, PyTorch, Git, FastAPI, NumPy, React, MongoDB, etc..</p>
-            <a href="my_skills.html">Skills Overview</a>
+  <!-- PROJECTS -->
+  <section id="projects" style="background: var(--white); max-width: 100%; padding: 80px 0;">
+    <div style="max-width:1100px;margin:0 auto;padding:0 2.5rem;">
+      <div class="section-rule">
+        <span class="section-label">Projects</span>
+      </div>
+      <div class="projects-grid">
 
-        </section>
+        <a href="https://picgate.app" target="_blank" class="project-card featured reveal">
+          <div class="proj-type">Full-Stack App</div>
+          <div class="proj-title">PicGate</div>
+          <p class="proj-desc">A live production web application. Visit picgate.app to see it in action.</p>
+          <div class="proj-tags">
+            <span class="tag">Production</span>
+            <span class="tag">Live</span>
+          </div>
+          <span class="proj-link">picgate.app ↗</span>
+        </a>
 
-        <section class="card fade-in">
-            <h2>Project Pages</h2>
-            <ul>
-                <li><a href="https://calendar.colgate.edu">Colgate University Events Calendar</a></li>
-                <li><a href="graph_page.html">Graph Theory Visualizer/Calculator</a></li>
-                <li><a href = "https://picgate.app">PicGate</a></li>
-            </ul>
+        <a href="https://calendar.colgate.edu" target="_blank" class="project-card featured reveal">
+          <div class="proj-type">Full-Stack · Agile Team</div>
+          <div class="proj-title">Colgate Event Calendar</div>
+          <p class="proj-desc">Full-stack campus event discovery platform centralizing 200+ events per semester. Built with a 5-person Agile team on a two-week release cycle.</p>
+          <div class="proj-stat">−40% posting errors via role-based auth</div>
+          <div class="proj-tags">
+            <span class="tag">Next.js</span>
+            <span class="tag">PostgreSQL</span>
+            <span class="tag">Supabase</span>
+            <span class="tag">Java</span>
+            <span class="tag">Google Calendar API</span>
+          </div>
+          <span class="proj-link">Visit site ↗</span>
+        </a>
 
-        </section>
-        
-        <section style = "padding-top: 7px;">
-            <p>
-                <a href="AlexRadovich_ML_Intern.png" download class="sidebar-button"> Download My Resume</a>
-            </p>
-            <section class = "sidebar-button">
-                <a style = "color: rgb(255, 255, 255)"  href = "resume.html"> Or just view it</a>
-            </section>
-        </section>
+        <a href="graph_page.html" class="project-card reveal">
+          <div class="proj-type">Interactive Tool · Math</div>
+          <div class="proj-title">Graph Theory Visualizer</div>
+          <p class="proj-desc">A live browser-based tool for building and analyzing graph structures — create nodes, draw edges, and run graph algorithms interactively. Built to help myself and classmates study graph theory.</p>
+          <div class="proj-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <span class="proj-link">Open tool →</span>
+        </a>
 
-    </main>
+        <div class="project-card reveal">
+          <div class="proj-type">Machine Learning · NLP</div>
+          <div class="proj-title">Large Language Math Model</div>
+          <p class="proj-desc">Trained a 22M-parameter transformer from scratch on mathematical and ML literature. Custom tokenizer designed for formal notation improved output efficiency by 70%.</p>
+          <div class="proj-stat">22M params · 70% efficiency gain</div>
+          <div class="proj-tags">
+            <span class="tag">PyTorch</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Python</span>
+            <span class="tag">Transformers</span>
+          </div>
+        </div>
+
+        <div class="project-card reveal">
+          <div class="proj-type">Machine Learning · Classification</div>
+          <div class="proj-title">ML Diagnostic Prediction System</div>
+          <p class="proj-desc">Binary classification model for medical diagnosis prediction. Implemented linear and logistic regression from first principles — cost functions, gradient descent, and hyperparameter tuning without external ML libraries.</p>
+          <div class="proj-tags">
+            <span class="tag">Python</span>
+            <span class="tag">NumPy</span>
+            <span class="tag">Scikit-Learn</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ML SHOWCASE -->
+  <section id="ml">
+    <div class="section-rule">
+      <span class="section-label">ML Work</span>
+    </div>
+    <div class="ml-grid">
+      <div class="ml-card reveal">
+        <span class="ml-icon">∿</span>
+        <div class="ml-title">Revenue Forecasting — DMEA</div>
+        <p class="ml-detail">Engineered end-to-end neural network pipeline in Python. Handled 50+ features and 100k+ rows with automated preprocessing: Yeo–Johnson normalization, one-hot encoding, data validation. Deployed for live business forecasting.</p>
+        <div class="ml-metric">R² = 0.98 · scikit-learn · Production</div>
+      </div>
+      <div class="ml-card reveal">
+        <span class="ml-icon">⊕</span>
+        <div class="ml-title">Transformer LLM — Math Domain</div>
+        <p class="ml-detail">Scraped and preprocessed technical math/ML content; built a custom tokenizer for formal notation; implemented multi-head attention and transformer architecture from scratch using PyTorch.</p>
+        <div class="ml-metric">22M params · PyTorch · Custom tokenizer</div>
+      </div>
+      <div class="ml-card reveal">
+        <span class="ml-icon">∂</span>
+        <div class="ml-title">From-Scratch Regression</div>
+        <p class="ml-detail">Built linear and logistic regression without ML libraries — derived cost functions, implemented gradient descent and hyperparameter tuning by hand. Strong mathematical foundation in optimization.</p>
+        <div class="ml-metric">NumPy · First principles · No sklearn</div>
+      </div>
+      <div class="ml-card reveal">
+        <span class="ml-icon">≈</span>
+        <div class="ml-title">Mathematical Coursework</div>
+        <p class="ml-detail">Calculus I–III, Linear Algebra, Graph Theory, Discrete Math, Numerical Analysis, Combinatorics, Real Analysis, Computational Mathematics. Upcoming: Applied Machine Learning, Stochastic Calculus.</p>
+        <div class="ml-metric">3.8 GPA · Dean's Award × 5 Semesters</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" style="background:var(--white);max-width:100%;padding:80px 0;">
+    <div style="max-width:1100px;margin:0 auto;padding:0 2.5rem;">
+      <div class="section-rule">
+        <span class="section-label">Skills</span>
+      </div>
+      <div class="skills-layout">
+        <div class="skill-group reveal">
+          <h3>Languages</h3>
+          <ul class="skill-list">
+            <li>Python <span class="skill-yrs">5 yrs</span></li>
+            <li>Java <span class="skill-yrs">3 yrs</span></li>
+            <li>C <span class="skill-yrs">2 yrs</span></li>
+            <li>JavaScript <span class="skill-yrs">2 yrs</span></li>
+            <li>HTML / CSS <span class="skill-yrs">3 yrs</span></li>
+            <li>MATLAB <span class="skill-yrs">3 yrs</span></li>
+            <li>Assembly<span class="skill-yrs">1 yr</span></li>
+            <li>C++<span class="skill-yrs">1 yr</span></li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3>ML / Data</h3>
+          <ul class="skill-list">
+            <li>PyTorch</li>
+            <li>scikit-learn</li>
+            <li>NumPy</li>
+            <li>XGBoost</li>
+            <li>FastAPI</li>
+            <li>Jupyter</li>
+            <li>Anaconda</li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Dev Tools</h3>
+          <ul class="skill-list">
+            <li>Git / GitHub <span class="skill-yrs">4 yrs</span></li>
+            <li>React <span class="skill-yrs">1 yr</span></li>
+            <li>MongoDB <span class="skill-yrs">2 yrs</span></li>
+            <li>Firebase <span class="skill-yrs">2 yrs</span></li>
+            <li>PostgreSQL</li>
+            <li>Figma / Scrum</li>
+            <li>Linux</li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Mathematics</h3>
+          <ul class="skill-list">
+            <li>Linear Algebra</li>
+            <li>Calculus I–III</li>
+            <li>Graph Theory</li>
+            <li>Numerical Analysis</li>
+            <li>Combinatorics</li>
+            <li>LaTeX</li>
+            <li>Mathematical Modeling</li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Game Dev</h3>
+          <ul class="skill-list">
+            <li>Godot / GDScript <span class="skill-yrs">4 yrs</span></li>
+            <li>Unity <span class="skill-yrs">2 yrs</span></li>
+            <li>Blender <span class="skill-yrs">1 yr</span></li>
+            <li>Lua</li>
+          </ul>
+        </div>
+        <div class="skill-group reveal">
+          <h3>Certifications</h3>
+          <ul class="skill-list">
+            <li style="flex-direction:column;align-items:flex-start;gap:0.15rem;">
+              <span>Supervised ML</span>
+              <a href="https://www.coursera.org/account/accomplishments/records/91CYAMOVCXNM" target="_blank"
+                style="font-family:var(--mono);font-size:0.7rem;color:var(--red);text-decoration:none;">
+                Stanford / DeepLearning.AI ↗
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <span class="footer-name">Alexander Radovich</span>
+    <div class="footer-links">
+      <a href="https://github.com/AlexRadovich" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/alexander-radovich-455846294/" target="_blank">LinkedIn</a>
+      <a href="about_me.html">About</a>
+      <a href="AlexRadovich_ML_Intern.png" download>Resume</a>
+    </div>
+  </footer>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 60);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => io.observe(el));
+  </script>
+
 </body>
 </html>

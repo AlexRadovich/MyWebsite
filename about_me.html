@@ -1,101 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>About Me | Alexander Radovich</title>
-    <link rel="stylesheet" href="styles.css" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>About — Alexander Radovich</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="top-bar">
-    <div class="container">
-    <a href = "index.html">
-        <img src="HouseIcon.png" alt="Home Icon" class="icon" />
-      </a>
-      <h1>About Me</h1>
-    </div>
-  </header>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Alexander Radovich</a>
+    <ul class="nav-links">
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#ml">ML Work</a></li>
+      <li><a href="my_skills.html">Skills</a></li>
+      <li><a href="about_me.html">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-tag">About Me</div>
+    <h1>Alexander <em>Radovich</em></h1>
+  </div>
 
   <main class="container">
-    <section>
-      <h2>Hello!</h2>
-      <p>
-        I'm Alexander Radovich, a junior at Colgate University pursuing a double major in <strong>Applied Mathematics</strong> and <strong>Computer Science</strong>. I’m deeply interested in the intersection of math application and theory, so machine learning and software engineering are my favorite fields.
+
+    <div class="content-section reveal">
+      <p style="font-size:1.05rem;font-weight:300;line-height:1.8;color:var(--ink-2);">
+        I'm a junior at Colgate University pursuing a double major in <strong>Applied Mathematics</strong> and <strong>Computer Science</strong>. I'm drawn to the intersection of mathematical theory and real-world application — which is why machine learning and software engineering are my favorite fields.
       </p>
+    </div>
 
-    </section>
+    <div class="content-section reveal">
+      <div class="section-rule">
+        <span class="section-label">Education</span>
+      </div>
+      <p style="margin-bottom:0.25rem;"><strong>Colgate University</strong> — Hamilton, NY</p>
+      <p style="font-size:0.85rem;color:var(--ink-3);margin-bottom:1.25rem;">B.A. Applied Mathematics & Computer Science · Expected May 2027 · GPA 3.8/4.0</p>
+      <p style="font-size:0.8rem;font-family:var(--mono);color:var(--red);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.75rem;">Dean's Award for Academic Excellence with Distinction — All 5 Semesters</p>
 
-    <section>
-      <h2>Relevant Coursework</h2>
-
-      <l>
-        <li>Calculus I-III</li>
-        <li>Graph Theory</li>
-        <li>Linear Algebra</li>
-        <li>Discrete Math</li>
-        <li>Intro. Computer Systems</li>
-        <li>Computational Mathematics</li>
-        <li>Numerical Analysis (In Progess)</li>
-        <li>Combinatorics (In Progress)</li>
-        <li>Data Structures and Algorithms (In Progress)</li>
-        <p></p>
-        <h3>Upcoming Classes</h3>
-        <p></p>
+      <h3>Current Coursework</h3>
+      <ul class="arrow-list">
         <li>Real Analysis</li>
+        <li>Human-Robot Interaction</li>
+        <li>Video Game Software Development</li>
+        
+      </ul>
+
+      <h3>Completed</h3>
+      <ul class="arrow-list">
+        <li>Calculus I–III</li>
+        <li>Linear Algebra</li>
+        <li>Graph Theory</li>
+        <li>Discrete Mathematics</li>
+        <li>Computational Mathematics</li>
+        <li>Intro to Computer Systems</li>
+        <li>Data Structures and Algorithms</li>
+        <li>Numerical Analysis</li>
+        <li>Combinatorics</li>
+      </ul>
+
+      <h3>Upcoming</h3>
+      <ul class="arrow-list">
+        <li>Algorithmic Game Theory</li>
         <li>Applied Machine Learning</li>
-        <li>Brownian Motion & Stochastic Calculus</li>
-
-      </l>
-      <p></p>
-    </section>
-
-    <section>
-      <h2>Recent Experience</h2>
-      <h3>Machine Learning Engineering / IT Intern — DMEA</h3>
-      <p><em>June 2025 – August 2025 | Montrose, CO</em></p>
-      <l>
-        <li>Developed end-to-end ML models (R² = 0.98) via Python, Jupyter Notebooks, to forecast revenue, supporting high-level financial planning.</li>
-        <p></p>
-        <li>Engineered scalable data pipelines for large datasets (100k+ rows) for preprocessing, supporting, and retraining neural networks via SciKit-Learn.</li>
-        <p></p>
-        <li>Worked directly with engineers, data scientists, consultants; delivered all project milestones early.</li>
-        <p></p>
-        I was offered a return internship for my technical execution and team contributions!</li>
+        <li>Brownian Motion &amp; Stochastic Calculus</li>
       </ul>
-    </section>
-    <p></p>
-    <section>
-    <h2>Hobbies & Personal Interests</h2>
-    <p>
-        Outside of academics, I like to explore the creative and strategic sides of tech. I'm particularly interested in:
-    </p>
-    <ul>
-        <li>Competitive strategy games: I’ve achieved the <strong>highest global rank</strong> in <em><strong>The Battle of Polytopia,</strong></em> the <strong> top 1%</strong> in <strong><em>Clash Royale,</em></strong> and <strong>top 3% </strong> of players in <em><strong>League of Legends</strong></em>. I love strategy and game theory!</li>
-        <li>Game development: I enjoy prototyping games and mechanics using <strong>Godot</strong>, <strong>Unity</strong>, <strong>Blender</strong>, and <strong>Lua</strong>, I think that games can be the best way to learn concepts, and making them is a fun skill to have!</li>
-        <li>Building tools that solve niche problems: from interactive graph theory visualizers to help myself and classmates, to DJ deck training apps.</li>
-    </ul>
-    </section>
+    </div>
 
-
-    <section>
-      <h2>Resume</h2>
-      <p>Check out my resume!</p>
-      <p>
-        <a href="Alex_Radovich_ML_Intern-1.png" download class="sidebar-button">Download My Resume</a>
-      </p>
-    </section>
-
-    <section>
-      <h2>Let's Connect</h2>
-      <p>You can find more of my work or reach out here:</p>
-      <ul>
-        <li><a href="https://github.com/AlexRadovich" target="_blank">GitHub</a></li>
-        <li><a href="https://www.linkedin.com/in/alexander-radovich-455846294/" target="_blank">LinkedIn</a></li>
+    <div class="content-section reveal">
+      <div class="section-rule">
+        <span class="section-label">Experience</span>
+      </div>
+      <p style="margin-bottom:0.2rem;"><strong>Machine Learning Engineering / IT Intern</strong></p>
+      <p style="font-family:var(--mono);font-size:0.78rem;color:var(--red);margin-bottom:1rem;">DMEA · Montrose, CO · June–August 2025</p>
+      <ul class="arrow-list">
+        <li>Developed end-to-end ML models (R² = 0.98) via Python and scikit-learn to forecast revenue, supporting high-level financial planning.</li>
+        <li>Engineered scalable data pipelines for 100k+ row datasets — preprocessing, validation, and automated retraining via scikit-learn.</li>
+        <li>Worked directly with engineers, data scientists, and consultants; delivered all project milestones early.</li>
+        <li>Offered a return internship for technical execution and team contributions.</li>
       </ul>
-        <p>(More contact methods available on resume)</p>
+      <span class="badge" style="margin-top:0.75rem;display:inline-block;">↩ Return offer secured</span>
+    </div>
 
-    </section>
+    <div class="content-section reveal">
+      <div class="section-rule">
+        <span class="section-label">Interests &amp; Hobbies</span>
+      </div>
+      <ul class="arrow-list">
+        <li>
+          <strong>Competitive strategy games</strong> — Highest global rank in <em>The Battle of Polytopia</em>, top 1% in <em>Clash Royale</em>, top 3% in <em>League of Legends</em>. I'm genuinely obsessed with strategy and game theory.
+        </li>
+        <li>
+          <strong>Game development</strong> — I prototype games and mechanics using Godot, Unity, Blender, and Lua. I think games are one of the best ways to teach concepts, and making them is a skill I want to keep building.
+        </li>
+        <li>
+          <strong>Building niche tools</strong> — From the interactive graph theory visualizer (to help myself and classmates learn) to DJ deck training apps. I like finding problems worth solving.
+        </li>
+      </ul>
+    </div>
+
+    <div class="content-section reveal">
+      <div class="section-rule">
+        <span class="section-label">Connect</span>
+      </div>
+      <p>You can find my work or reach out here:</p>
+      <div style="display:flex;gap:1rem;flex-wrap:wrap;margin-top:1rem;">
+        <a href="https://github.com/AlexRadovich" target="_blank" class="btn btn-outline">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/alexander-radovich-455846294/" target="_blank" class="btn btn-outline">LinkedIn ↗</a>
+        <a href="AlexRadovich_ML_Intern.png" download class="btn btn-primary">Download Resume</a>
+      </div>
+      <p style="margin-top:1rem;font-size:0.82rem;color:var(--ink-3);">Additional contact info on resume.</p>
+    </div>
+
   </main>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.06 });
+    reveals.forEach(el => io.observe(el));
+  </script>
+
 </body>
 </html>

@@ -1,104 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-    <meta charset="UTF-8">
-    <title>My Skills – Alexander Radovich</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Skills — Alexander Radovich</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .skill-group {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+    }
+
+    .skill-group-title {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--red);
+      margin-bottom: 1rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 1px solid var(--rule);
+    }
+
+    .skill-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      padding: 0.35rem 0;
+      border-bottom: 1px solid #f0f0ee;
+      font-size: 0.87rem;
+      color: var(--ink-2);
+    }
+
+    .skill-row:last-child { border-bottom: none; }
+
+    .skill-meta {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      color: var(--ink-3);
+      text-align: right;
+      line-height: 1.4;
+    }
+
+    .cert-card {
+      background: var(--white);
+      border: 1px solid var(--rule);
+      border-left: 3px solid var(--red);
+      border-radius: 4px;
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+
+    .cert-icon {
+      font-family: var(--mono);
+      font-size: 1.2rem;
+      color: var(--red);
+      flex-shrink: 0;
+      margin-top: 0.1rem;
+    }
+
+    .cert-title {
+      font-size: 0.92rem;
+      font-weight: 500;
+      color: var(--ink);
+      margin-bottom: 0.25rem;
+    }
+
+    .cert-org {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-3);
+      margin-bottom: 0.5rem;
+    }
+  </style>
 </head>
 <body>
-    <header class="top-bar">
-        <div class="container">
-            <a href="index.html">
-                <img src="HouseIcon.png" alt="Home" class="icon">
-            </a>
-            <h1>My Skills</h1>
+
+  <nav>
+    <a href="index.html" class="nav-logo">Alexander Radovich</a>
+    <ul class="nav-links">
+      <li><a href="index.html#experience">Experience</a></li>
+      <li><a href="index.html#projects">Projects</a></li>
+      <li><a href="index.html#ml">ML Work</a></li>
+      <li><a href="my_skills.html">Skills</a></li>
+      <li><a href="about_me.html">About</a></li>
+    </ul>
+  </nav>
+
+  <div class="page-header">
+    <div class="page-tag">Technical Profile</div>
+    <h1>Skills &amp; <em>Tools</em></h1>
+  </div>
+
+  <main class="container">
+
+    <!-- CERTIFICATIONS -->
+    <div class="content-section reveal">
+      <div class="section-rule">
+        <span class="section-label">Certifications</span>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">✦</div>
+        <div>
+          <div class="cert-title">Supervised Machine Learning: Regression and Classification</div>
+          <div class="cert-org">Stanford University Online · DeepLearning.AI · July–August 2024</div>
+          <a href="https://www.coursera.org/account/accomplishments/records/91CYAMOVCXNM"
+             target="_blank"
+             style="font-family:var(--mono);font-size:0.72rem;color:var(--red);">
+            View certificate ↗
+          </a>
         </div>
-    </header>
+      </div>
+    </div>
 
-    <main class="container">
-        <section>
-            <h2>Development Skills</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Skill</th>
-                            <th>Usage</th>
-                            <th>Years of Experience</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Git/Github</td><td>Personal</td><td>4</td></tr>
-                        <tr><td>React</td><td>Personal</td><td>1</td></tr>
-                        <tr><td>Python</td><td>Professional, Personal, Academic</td><td>5</td></tr>
-                        <tr><td>NumPy</td><td>Professional, Personal</td><td>2</td></tr>                        
-                        <tr><td>XG Boost</td><td>Professional, Personal</td><td>1</td></tr>                        
-                        <tr><td>Jupyter Notebooks</td><td>Professional, Personal</td><td>1</td></tr>                                               
-                        <tr><td>C</td><td>Personal, Academic</td><td>2</td></tr>
-                        <tr><td>Assembly</td><td>Academic</td><td>1</td></tr>                        
-                        <tr><td>Java</td><td>Personal, Academic</td><td>3</td></tr>
-                        <tr><td>CSS</td><td>Personal</td><td>3</td></tr>
-                        <tr><td>MongoDB</td><td>Personal</td><td>2</td></tr>
-                        <tr><td>Firebase</td><td>Personal</td><td>2</td></tr>
-                        <tr><td>JavaScript</td><td>Personal</td><td>2</td></tr>
-                        <tr><td>HTML</td><td>Personal</td><td>3</td></tr>
-                        <tr><td>GDScript</td><td>Personal</td><td>4</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+    <!-- PROGRAMMING LANGUAGES -->
+    <div class="content-section reveal">
+      <div class="section-rule">
+        <span class="section-label">Languages</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-title">Advanced</div>
+          <div class="skill-row"><span>Python</span><span class="skill-meta">5 yrs · Prof / Personal / Academic</span></div>
+          <div class="skill-row"><span>Java</span><span class="skill-meta">3 yrs · Personal / Academic</span></div>
+          <div class="skill-row"><span>HTML</span><span class="skill-meta">3 yrs · Personal</span></div>
+          <div class="skill-row"><span>CSS</span><span class="skill-meta">3 yrs · Personal</span></div>
+          <div class="skill-row"><span>MATLAB</span><span class="skill-meta">3 yrs · Academic</span></div>
+          <div class="skill-row"><span>LaTeX</span><span class="skill-meta">2 yrs · Personal / Academic</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Intermediate</div>
+          <div class="skill-row"><span>C</span><span class="skill-meta">2 yrs · Personal / Academic</span></div>
+          <div class="skill-row"><span>JavaScript</span><span class="skill-meta">2 yrs · Personal</span></div>
+          <div class="skill-row"><span>GDScript</span><span class="skill-meta">4 yrs · Personal</span></div>
+          <div class="skill-row"><span>Assembly</span><span class="skill-meta">1 yr · Academic</span></div>
+          <div class="skill-row"><span>C++</span><span class="skill-meta">1 yr · Personal</span></div>
+          <div class="skill-row"><span>Lua</span><span class="skill-meta">Personal</span></div>
+        </div>
+      </div>
+    </div>
 
-        <section>
-            <h2>Math Skills</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Skill</th>
-                            <th>Usage</th>
-                            <th>Years of Experience</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr><td>Graph Theory</td><td>Personal, Academic</td><td>1</td></tr>
-                        <tr><td>MatLab</td><td>Academic</td><td>3</td></tr>
-                        <tr><td>Calculus</td><td>Personal, Academic</td><td>4</td></tr>
-                        <tr><td>Linear Algebra</td><td>Professional, Personal, Academic</td><td>3</td></tr>
-                        <tr><td>LaTeX</td><td>Personal, Academic</td><td>2</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
+    <!-- ML / DATA -->
+    <div class="content-section reveal">
+      <div class="section-rule">
+        <span class="section-label">ML &amp; Data</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-title">Frameworks</div>
+          <div class="skill-row"><span>PyTorch</span><span class="skill-meta">Personal</span></div>
+          <div class="skill-row"><span>scikit-learn</span><span class="skill-meta">Prof / Personal</span></div>
+          <div class="skill-row"><span>NumPy</span><span class="skill-meta">2 yrs · Prof / Personal</span></div>
+          <div class="skill-row"><span>XGBoost</span><span class="skill-meta">1 yr · Prof / Personal</span></div>
+          <div class="skill-row"><span>FastAPI</span><span class="skill-meta">Personal</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Environments</div>
+          <div class="skill-row"><span>Jupyter Notebooks</span><span class="skill-meta">1 yr · Prof / Personal</span></div>
+          <div class="skill-row"><span>Anaconda</span><span class="skill-meta">Personal</span></div>
+          <div class="skill-row"><span>Power BI</span><span class="skill-meta">Professional</span></div>
+          <div class="skill-row"><span>Linux Systems</span><span class="skill-meta">Personal</span></div>
+        </div>
+      </div>
+    </div>
 
-        <section>
-            <h2>Applied Skills</h2>
-            <div class="table-wrapper">
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Skill</th>
-                            <th>Usage</th>
-                            <th>Years of Experience</th>
-                        </tr>
-                    </thead>
-                    <tbody>
+    <!-- DEV TOOLS -->
+    <div class="content-section reveal">
+      <div class="section-rule">
+        <span class="section-label">Dev Tools &amp; Infrastructure</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-title">Version Control / Infra</div>
+          <div class="skill-row"><span>Git / GitHub</span><span class="skill-meta">4 yrs · Personal</span></div>
+          <div class="skill-row"><span>MongoDB</span><span class="skill-meta">2 yrs · Personal</span></div>
+          <div class="skill-row"><span>Firebase</span><span class="skill-meta">2 yrs · Personal</span></div>
+          <div class="skill-row"><span>PostgreSQL</span><span class="skill-meta">Personal</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Frontend / Workflow</div>
+          <div class="skill-row"><span>React</span><span class="skill-meta">1 yr · Personal</span></div>
+          <div class="skill-row"><span>Figma</span><span class="skill-meta">1 yr · Prof / Personal</span></div>
+          <div class="skill-row"><span>Scrum / Agile</span><span class="skill-meta">1 yr · Prof / Personal</span></div>
+          <div class="skill-row"><span>Slack</span><span class="skill-meta">1 yr · Prof / Personal</span></div>
+        </div>
+      </div>
+    </div>
 
-                        <tr><td>Machine Learning</td><td>Professional, Personal</td><td>2</td></tr>
-                        <tr><td>Slack</td><td>Professional, Personal</td><td>1</td></tr>
-                        <tr><td>Figma</td><td>Professional, Personal</td><td>1</td></tr>
-                        <tr><td>Scrum</td><td>Professional, Personal</td><td>1</td></tr>
-                        <tr><td>Math Systems Modeling</td><td>Academic</td><td>2</td></tr>
-                        <tr><td>Unity Engine</td><td>Personal</td><td>2</td></tr>
-                        <tr><td>Godot</td><td>Personal</td><td>3</td></tr>
-                        <tr><td>Blender</td><td>Personal</td><td>1</td></tr>
-                    </tbody>
-                </table>
-            </div>
-        </section>
-    </main>
+    <!-- MATHEMATICS -->
+    <div class="content-section reveal">
+      <div class="section-rule">
+        <span class="section-label">Mathematics</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-title">Applied Math</div>
+          <div class="skill-row"><span>Linear Algebra</span><span class="skill-meta">3 yrs · Prof / Personal / Academic</span></div>
+          <div class="skill-row"><span>Calculus I–III</span><span class="skill-meta">4 yrs · Academic</span></div>
+          <div class="skill-row"><span>Numerical Analysis</span><span class="skill-meta">Academic</span></div>
+          <div class="skill-row"><span>Mathematical Modeling</span><span class="skill-meta">2 yrs · Academic</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Discrete / Theory</div>
+          <div class="skill-row"><span>Graph Theory</span><span class="skill-meta">1 yr · Personal / Academic</span></div>
+          <div class="skill-row"><span>Combinatorics</span><span class="skill-meta">Academic</span></div>
+          <div class="skill-row"><span>Discrete Mathematics</span><span class="skill-meta">Academic</span></div>
+          <div class="skill-row"><span>Algorithms</span><span class="skill-meta">Academic</span></div>
+        </div>
+      </div>
+    </div>
 
+    <!-- GAME DEV -->
+    <div class="content-section reveal">
+      <div class="section-rule">
+        <span class="section-label">Game Development</span>
+      </div>
+      <div class="skills-grid">
+        <div class="skill-group">
+          <div class="skill-group-title">Engines</div>
+          <div class="skill-row"><span>Godot</span><span class="skill-meta">3 yrs · Personal</span></div>
+          <div class="skill-row"><span>Unity</span><span class="skill-meta">2 yrs · Personal</span></div>
+        </div>
+        <div class="skill-group">
+          <div class="skill-group-title">Tools</div>
+          <div class="skill-row"><span>Blender</span><span class="skill-meta">1 yr · Personal</span></div>
+          <div class="skill-row"><span>Lua</span><span class="skill-meta">Personal</span></div>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.06 });
+    reveals.forEach(el => io.observe(el));
+  </script>
 
 </body>
 </html>
