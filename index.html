@@ -290,6 +290,112 @@
       color: var(--red);
     }
 
+    /* ── QUANT ── */
+    .quant-featured {
+      background: var(--ink); color: var(--white);
+      border-radius: 6px; padding: 2.5rem;
+      margin-bottom: 1.5rem; position: relative; overflow: hidden;
+    }
+    .quant-featured::before {
+      content: ''; position: absolute; top: 0; left: 0;
+      width: 3px; height: 100%; background: var(--red);
+    }
+    .quant-featured-type {
+      font-family: var(--mono); font-size: 0.7rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: #888; margin-bottom: 0.75rem;
+    }
+    .quant-featured-title {
+      font-family: var(--serif); font-size: 1.7rem;
+      color: var(--white); line-height: 1.15; margin-bottom: 1rem;
+    }
+    .quant-featured-desc {
+      font-size: 0.9rem; color: #bbb;
+      line-height: 1.75; max-width: 680px; margin-bottom: 1.5rem;
+    }
+    .quant-metrics {
+      display: flex; flex-wrap: wrap; gap: 2rem;
+      margin-bottom: 1.5rem; padding: 1.25rem 0;
+      border-top: 1px solid #333; border-bottom: 1px solid #333;
+    }
+    .quant-metric-val {
+      font-family: var(--serif); font-size: 1.6rem;
+      color: var(--white); line-height: 1;
+    }
+    .quant-metric-label {
+      font-family: var(--mono); font-size: 0.68rem;
+      color: #777; text-transform: uppercase;
+      letter-spacing: 0.06em; margin-top: 0.25rem;
+    }
+    .quant-highlights {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1rem; margin-bottom: 1.5rem;
+    }
+    @media (max-width: 700px) { .quant-highlights { grid-template-columns: 1fr; } }
+    .quant-highlight {
+      background: #1e1e1e; border-radius: 4px; padding: 1rem 1.1rem;
+    }
+    .quant-highlight-label {
+      font-family: var(--mono); font-size: 0.68rem;
+      color: var(--red); text-transform: uppercase;
+      letter-spacing: 0.08em; margin-bottom: 0.4rem;
+    }
+    .quant-highlight-text { font-size: 0.83rem; color: #ccc; line-height: 1.6; }
+    .quant-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1.25rem; }
+    .quant-tag {
+      font-family: var(--mono); font-size: 0.68rem;
+      background: #2a2a2a; color: #999;
+      padding: 0.2rem 0.55rem; border-radius: 2px; letter-spacing: 0.04em;
+    }
+    .quant-link {
+      font-family: var(--mono); font-size: 0.78rem;
+      color: var(--red); text-decoration: none; letter-spacing: 0.04em;
+    }
+    .quant-link:hover { text-decoration: underline; }
+    .quant-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+    .quant-card {
+      background: var(--white); border: 1px solid var(--rule);
+      border-radius: 4px; padding: 1.5rem;
+      border-left: 2px solid transparent;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+    .quant-card:hover {
+      border-left-color: var(--red);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.06);
+    }
+    .quant-card-type {
+      font-family: var(--mono); font-size: 0.68rem;
+      color: var(--ink-3); letter-spacing: 0.08em;
+      text-transform: uppercase; margin-bottom: 0.5rem;
+    }
+    .quant-card-title {
+      font-family: var(--serif); font-size: 1.1rem;
+      color: var(--ink); margin-bottom: 0.5rem;
+    }
+    .quant-card-desc {
+      font-size: 0.85rem; color: var(--ink-2);
+      line-height: 1.65; margin-bottom: 1rem;
+    }
+    .quant-add-card {
+      background: transparent; border: 1px dashed var(--rule);
+      border-radius: 4px; padding: 1.5rem;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; gap: 0.5rem; min-height: 160px;
+    }
+    .quant-add-icon {
+      font-family: var(--mono); font-size: 1.8rem;
+      color: var(--rule); line-height: 1;
+    }
+    .quant-add-text {
+      font-family: var(--mono); font-size: 0.7rem;
+      letter-spacing: 0.06em; text-transform: uppercase; color: var(--ink-3);
+    }
+
     /* ── SKILLS ── */
     .skills-layout {
       display: grid;
@@ -365,6 +471,7 @@
     <ul class="nav-links">
       <li><a href="#experience">Experience</a></li>
       <li><a href="#projects">Projects</a></li>
+      <li><a href="#quant">Quant</a></li>
       <li><a href="#ml">ML Work</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="about_me.html">About</a></li>
@@ -377,7 +484,7 @@
       <div class="hero-tag">Applied Math & CS — Colgate University</div>
       <h1 class="hero-name">Alexander<br><em>Radovich</em></h1>
       <p class="hero-desc">
-        Junior building at the intersection of machine learning and applied mathematics. |
+        Junior building at the intersection of machine learning and applied mathematics |
         Former ML Engineering Intern at DMEA 
       </p>
       <div class="hero-links">
@@ -407,9 +514,14 @@
         <div class="t-line"></div>
         <div class="t-content">
           <div class="t-upcoming">
-            <div class="t-upcoming-label">Upcoming</div>
-            <div class="t-role">Machine Learning Summer Research — University of Maryland</div>
-            <p style="font-size:0.85rem;color:#999;margin-top:0.5rem;"> Machine Learning for Autonomous Driving research under the mentorship of Dr. Ming Lin</p>
+            <div class="t-upcoming-label">Upcoming · Summer 2026</div>
+            <div class="t-role">Machine Learning Research @ U Maryland</div>
+            <p style="font-size:0.85rem;color:#888;margin-top:0.5rem;line-height:1.6;">Machine Learning for Autonomous Driving research under the mentorship of Dr. Ming Lin</p>
+            <div class="proj-tags" style="margin-top:0.75rem;">
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Applied Math</span>
+              <span class="tag">Research</span>
+            </div>
           </div>
         </div>
       </div>
@@ -506,10 +618,107 @@
     </div>
   </section>
 
+  <!-- QUANT -->
+  <section id="quant" style="background:var(--white);max-width:100%;padding:80px 0;">
+    <div style="max-width:1100px;margin:0 auto;padding:0 2.5rem;">
+      <div class="section-rule">
+        <span class="section-label">Quant Finance Research Projects</span>
+      </div>
+
+      <div class="quant-featured reveal">
+        <div class="quant-featured-type">Quant Project · ML × Quantitative Finance</div>
+        <div class="quant-featured-title">Regime-Conditioned KAN<br>Trading Strategy</div>
+        <p class="quant-featured-desc">
+          Most ML models applied to markets assume the market behaves the same way all the time.
+          This project challenges that: first detect which market regime you're in using a Hidden Markov Model,
+          then route to a specialist forecaster (a Kolmogorov-Arnold Network) trained only on days
+          that looked like today. KANs replace fixed activation functions with learnable spline curves,
+          making the model's logic directly readable. The result is a transparent, regime-aware system
+          that reveals cross-asset relationships invisible to single-model approaches.
+        </p>
+
+        <div style="background:#111;border:1px solid #2a2a2a;border-left:2px solid var(--red);border-radius:4px;padding:1rem 1.25rem;margin-bottom:1.5rem;display:flex;align-items:flex-start;gap:1rem;flex-wrap:wrap;">
+          <div style="font-family:var(--mono);font-size:0.68rem;color:var(--red);text-transform:uppercase;letter-spacing:0.08em;white-space:nowrap;padding-top:0.1rem;">Based on</div>
+          <div style="flex:1;min-width:200px;">
+            <div style="font-size:0.88rem;color:#e0e0e0;margin-bottom:0.25rem;line-height:1.4;">KASPER: Kolmogorov-Arnold Networks for Stock Prediction and Explainable Regimes</div>
+            <div style="font-family:var(--mono);font-size:0.7rem;color:#666;margin-bottom:0.5rem;">arXiv · 2507.18983 · July 2025</div>
+            <a href="https://arxiv.org/abs/2507.18983" target="_blank" style="font-family:var(--mono);font-size:0.72rem;color:var(--red);text-decoration:none;">Read paper ↗</a>
+          </div>
+        </div>
+
+        <div class="quant-metrics">
+          <div><div class="quant-metric-val">0.38</div><div class="quant-metric-label">Out-of-sample Sharpe</div></div>
+          <div><div class="quant-metric-val">3.9%</div><div class="quant-metric-label">Annualized return</div></div>
+          <div><div class="quant-metric-val">11.8%</div><div class="quant-metric-label">Annualized volatility</div></div>
+          <div><div class="quant-metric-val">44%</div><div class="quant-metric-label">Days in market</div></div>
+          <div><div class="quant-metric-val">97%</div><div class="quant-metric-label">Regime persistence / day</div></div>
+          <div><div class="quant-metric-val">15yr</div><div class="quant-metric-label">Backtest · 2010–2024</div></div>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1fr 1px 1fr;gap:0;margin-bottom:1.5rem;">
+          <div style="background:#111;border-radius:4px 0 0 4px;padding:1rem 1.25rem;">
+            <div style="font-family:var(--mono);font-size:0.68rem;color:var(--red);text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.75rem;">This strategy</div>
+            <div style="display:flex;flex-direction:column;gap:0.4rem;">
+              <div style="display:flex;justify-content:space-between;font-size:0.82rem;"><span style="color:#888;">Sharpe</span><span style="color:#e0e0e0;font-family:var(--mono);">0.38</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:0.82rem;"><span style="color:#888;">Ann. Return</span><span style="color:#e0e0e0;font-family:var(--mono);">3.9%</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:0.82rem;"><span style="color:#888;">Volatility</span><span style="color:#e0e0e0;font-family:var(--mono);">11.8%</span></div>
+            </div>
+          </div>
+          <div style="background:#222;"></div>
+          <div style="background:#111;border-radius:0 4px 4px 0;padding:1rem 1.25rem;">
+            <div style="font-family:var(--mono);font-size:0.68rem;color:#555;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.75rem;">Buy &amp; hold SPY</div>
+            <div style="display:flex;flex-direction:column;gap:0.4rem;">
+              <div style="display:flex;justify-content:space-between;font-size:0.82rem;"><span style="color:#888;">Sharpe</span><span style="color:#666;font-family:var(--mono);">0.80</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:0.82rem;"><span style="color:#888;">Ann. Return</span><span style="color:#666;font-family:var(--mono);">13.2%</span></div>
+              <div style="display:flex;justify-content:space-between;font-size:0.82rem;"><span style="color:#888;">Volatility</span><span style="color:#666;font-family:var(--mono);">17.5%</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="quant-highlights">
+          <div class="quant-highlight">
+            <div class="quant-highlight-label">Regime Detection</div>
+            <div class="quant-highlight-text">Unsupervised HMM on SPY, QQQ, GLD, TLT features discovers genuine market structure — post-2020, 2022 rate cycle, and 2013–2019 bull run each emerge as distinct regimes without labeled data.</div>
+          </div>
+          <div class="quant-highlight">
+            <div class="quant-highlight-label">Interpretability</div>
+            <div class="quant-highlight-text">KAN spline plots are a direct window into model logic. In calm bull regimes, bond momentum outpredicts equity momentum — a cross-asset signal only visible with regime specialization.</div>
+          </div>
+          <div class="quant-highlight">
+            <div class="quant-highlight-label">Honest Methodology</div>
+            <div class="quant-highlight-text">Walk-forward validation, zero data leakage. An initial backtest produced 6.28 Sharpe — caught, diagnosed as leakage, corrected. Underperformance vs benchmark honestly reported.</div>
+          </div>
+        </div>
+
+        <div class="quant-tags">
+          <span class="quant-tag">Python</span>
+          <span class="quant-tag">PyTorch</span>
+          <span class="quant-tag">Hidden Markov Model</span>
+          <span class="quant-tag">KAN</span>
+          <span class="quant-tag">Walk-forward Validation</span>
+          <span class="quant-tag">SPY · QQQ · GLD · TLT</span>
+          <span class="quant-tag">NumPy</span>
+        </div>
+
+        <div style="display:flex;gap:1.25rem;align-items:center;flex-wrap:wrap;">
+          <a href="https://github.com/AlexRadovich/KAN_regimes" target="_blank" class="quant-link">View on GitHub ↗</a>
+          <a href="https://arxiv.org/abs/2507.18983" target="_blank" class="quant-link" style="color:#666;">KASPER paper (arXiv 2507.18983) ↗</a>
+        </div>
+      </div>
+
+      <div class="quant-grid">
+        <div class="quant-add-card reveal">
+          <div class="quant-add-icon">+</div>
+          <div class="quant-add-text">More projects coming</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ML SHOWCASE -->
   <section id="ml">
     <div class="section-rule">
-      <span class="section-label">ML Work</span>
+      <span class="section-label">ML &amp; Quant Work</span>
     </div>
     <div class="ml-grid">
       <div class="ml-card reveal">
@@ -533,7 +742,7 @@
       <div class="ml-card reveal">
         <span class="ml-icon">≈</span>
         <div class="ml-title">Mathematical Coursework</div>
-        <p class="ml-detail">Calculus I–III, Linear Algebra, Graph Theory, Discrete Math, Numerical Analysis, Combinatorics, Real Analysis, Computational Mathematics. Upcoming: Applied Machine Learning, Stochastic Calculus.</p>
+        <p class="ml-detail">Calculus I–III, Linear Algebra, Graph Theory, Discrete Math, Numerical Analysis, Combinatorics, Computational Mathematics. Upcoming: Real Analysis, Applied Machine Learning, Stochastic Calculus.</p>
         <div class="ml-metric">3.8 GPA · Dean's Award × 5 Semesters</div>
       </div>
     </div>
@@ -555,8 +764,7 @@
             <li>JavaScript <span class="skill-yrs">2 yrs</span></li>
             <li>HTML / CSS <span class="skill-yrs">3 yrs</span></li>
             <li>MATLAB <span class="skill-yrs">3 yrs</span></li>
-            <li>Assembly<span class="skill-yrs">1 yr</span></li>
-            <li>C++<span class="skill-yrs">1 yr</span></li>
+            <li>Assembly / C++ <span class="skill-yrs">1 yr</span></li>
           </ul>
         </div>
         <div class="skill-group reveal">
