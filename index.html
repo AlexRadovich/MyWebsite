@@ -204,7 +204,7 @@
       <a href="https://picgate.app" target="_blank" class="project-card featured reveal">
         <div class="proj-type">Full-Stack App &middot; Production</div>
         <div class="proj-title">PicGate</div>
-        <p class="proj-desc">A live, deployed web application serving real users. Built and maintained end-to-end &mdash; from frontend UI and backend API to deployment pipeline and iterative feature releases based on user feedback.</p>
+        <p class="proj-desc">A live, deployed web application serving real users. Built and maintained end-to-end, from frontend UI and backend API to deployment pipeline and iterative feature releases based on user feedback.</p>
         <div class="proj-tags"><span class="tag">Production</span><span class="tag">Live</span></div>
         <span class="proj-link">picgate.app &nearr;</span>
       </a>
@@ -221,7 +221,7 @@
       <a href="graph_page.html" class="project-card reveal">
         <div class="proj-type">Interactive Tool &middot; Math</div>
         <div class="proj-title">Graph Theory Visualizer</div>
-        <p class="proj-desc">A live browser-based tool for building and analyzing graph structures &mdash; create nodes, draw edges, and run graph algorithms interactively. Built to help myself and classmates study graph theory.</p>
+        <p class="proj-desc">A live browser-based tool for building and analyzing graph structures: create nodes, draw edges, and run graph algorithms interactively. Built to help myself and classmates study graph theory.</p>
         <div class="proj-tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JavaScript</span></div>
         <span class="proj-link">Open tool &rarr;</span>
       </a>
@@ -237,7 +237,7 @@
       <div class="project-card reveal">
         <div class="proj-type">Machine Learning &middot; Classification</div>
         <div class="proj-title">ML Diagnostic Prediction System</div>
-        <p class="proj-desc">Binary classification model for medical diagnosis prediction. Implemented linear and logistic regression from first principles &mdash; cost functions, gradient descent, and hyperparameter tuning without external ML libraries.</p>
+        <p class="proj-desc">Binary classification model for medical diagnosis prediction. Implemented linear and logistic regression from first principles. (cost functions, gradient descent, and hyperparameter tuning without external ML libraries.)</p>
         <div class="proj-tags"><span class="tag">Python</span><span class="tag">NumPy</span><span class="tag">Scikit-Learn</span></div>
       </div>
 
@@ -296,13 +296,13 @@
 
       <div style="background:#0e0e0e;border:1px solid #2a2a2a;border-left:2px solid #444;border-radius:4px;padding:0.9rem 1.1rem;margin-bottom:1.5rem;">
         <div style="font-family:var(--mono);font-size:0.65rem;color:#555;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:0.4rem;">Honest interpretation</div>
-        <p style="font-size:0.82rem;color:#999;line-height:1.65;">The strategy underperforms buy-and-hold on raw return. The signal generator is conservative &mdash; spending ~56% of days in cash reduces volatility and max drawdown (&minus;28.3% vs SPY&rsquo;s &minus;33.7%) but misses significant upside in sustained bull runs. This is a research proof-of-concept focused on interpretability and regime structure, not return maximization. The results are meaningful precisely because they are honest: walk-forward validation and careful leakage correction ensure no look-ahead bias inflates the numbers.</p>
+        <p style="font-size:0.82rem;color:#999;line-height:1.65;">The strategy underperforms buy-and-hold on raw return. The signal generator is conservative, spending ~56% of days in cash reduces volatility and max drawdown (&minus;28.3% vs SPY&rsquo;s &minus;33.7%) but misses significant upside in sustained bull runs. This is a research proof-of-concept focused on interpretability and regime structure, not return maximization. The results are meaningful precisely because they are honest: walk-forward validation and careful leakage correction ensure no look-ahead bias inflates the numbers.</p>
       </div>
 
       <div class="quant-highlights">
         <div class="quant-highlight">
           <div class="quant-highlight-label">Regime Detection</div>
-          <div class="quant-highlight-text">A Gaussian HMM on 16 cross-asset features (return, 20-day volatility, momentum, RSI across SPY/QQQ/GLD/TLT) identifies 3 hidden regimes without labeled data. Diagonal transition probabilities of ~0.97 confirm each regime is highly persistent &mdash; consistent with how real market environments behave.</div>
+          <div class="quant-highlight-text">A Gaussian HMM on 16 cross-asset features (return, 20-day volatility, momentum, RSI across SPY/QQQ/GLD/TLT) identifies 3 hidden regimes without labeled data. Diagonal transition probabilities of ~0.97 confirm each regime is highly persistent, consistent with how real market environments behave.</div>
         </div>
         <div class="quant-highlight">
           <div class="quant-highlight-label">Key Finding</div>
@@ -310,7 +310,7 @@
         </div>
         <div class="quant-highlight">
           <div class="quant-highlight-label">Honest Methodology</div>
-          <div class="quant-highlight-text">Walk-forward validation: both HMM and KANs retrained from scratch at each step using only past data. An initial backtest produced 6.28 Sharpe &mdash; caught, diagnosed as look-ahead leakage, corrected. The corrected 0.38 Sharpe is the honest number. Underperformance vs benchmark is reported, not hidden.</div>
+          <div class="quant-highlight-text">Walk-forward validation: both HMM and KANs retrained from scratch at each step using only past data. An initial backtest produced 6.28 Sharpe. It was caught, diagnosed as look-ahead leakage, and corrected. The corrected 0.38 Sharpe is the honest number. Underperformance vs benchmark is reported, not hidden.</div>
         </div>
       </div>
 
@@ -343,7 +343,7 @@
       <div class="tech-detail">
         <div class="tech-detail-label">Technical Details</div>
         <div class="tech-detail-grid">
-          <div><div class="tech-detail-key">Feature Space</div><div class="tech-detail-val">16 features across 4 ETFs &mdash; daily return, 20-day rolling volatility, 20-day momentum, and RSI per asset</div></div>
+          <div><div class="tech-detail-key">Feature Space</div><div class="tech-detail-val">16 features across 4 ETFs, daily return, 20-day rolling volatility, 20-day momentum, and RSI per asset</div></div>
           <div><div class="tech-detail-key">Regime Model</div><div class="tech-detail-val">Gaussian HMM &middot; 3 states &middot; diagonal transition probabilities ~0.97 (high persistence)</div></div>
           <div><div class="tech-detail-key">Forecasters</div><div class="tech-detail-val">3 specialist KANs (one per regime) &middot; learnable spline activations &middot; predicts next-day SPY return</div></div>
           <div><div class="tech-detail-key">Validation</div><div class="tech-detail-val">Walk-forward &middot; retrained every 252 trading days &middot; signals generated only on unseen data</div></div>
@@ -353,12 +353,12 @@
       </div>
 
       <div class="next-steps">
-        <div class="next-steps-label">What I&rsquo;d do next</div>
+        <div class="next-steps-label">What I&rsquo;d do next</div> 
         <ul class="next-steps-list">
-          <li><strong>Short selling in bear regimes</strong> &mdash; currently goes to cash on negative predictions; adding short positions would let the strategy profit from downturns, likely improving Sharpe significantly</li>
-          <li><strong>Richer macro features</strong> &mdash; VIX, yield curve slope, and credit spreads would give the regime detector more signal to work with</li>
-          <li><strong>Regime label consistency</strong> &mdash; the HMM label-switching problem is a known limitation worth addressing with constrained initialization across walk-forward windows</li>
-          <li><strong>Longer training windows</strong> &mdash; more historical data per window may produce more stable per-regime KAN forecasters</li>
+          <li><strong>Short selling in bear regimes</strong> - currently goes to cash on negative predictions; adding short positions would let the strategy profit from downturns, likely improving Sharpe significantly</li>
+          <li><strong>Richer macro features</strong> - VIX, yield curve slope, and credit spreads would give the regime detector more signal to work with</li>
+          <li><strong>Regime label consistency</strong> - the HMM label-switching problem is a known limitation worth addressing with constrained initialization across walk-forward windows</li>
+          <li><strong>Longer training windows</strong> - more historical data per window may produce more stable per-regime KAN forecasters</li>
         </ul>
       </div>
 
@@ -385,20 +385,20 @@
   <div class="ml-grid">
     <div class="ml-card reveal">
       <span class="ml-icon">&#8767;</span>
-      <div class="ml-title">Revenue Forecasting &mdash; DMEA</div>
+      <div class="ml-title">Revenue Forecasting - DMEA</div>
       <p class="ml-detail">Engineered end-to-end neural network pipeline in Python. Handled 50+ features and 100k+ rows with automated preprocessing: Yeo&ndash;Johnson normalization, one-hot encoding, data validation. Deployed for live business forecasting.</p>
       <div class="ml-metric">R&sup2; = 0.98 &middot; scikit-learn &middot; Production</div>
     </div>
     <div class="ml-card reveal">
       <span class="ml-icon">&#8853;</span>
-      <div class="ml-title">Transformer LLM &mdash; Math Domain</div>
+      <div class="ml-title">Transformer LLM - Math Domain</div>
       <p class="ml-detail">Scraped and preprocessed technical math/ML content; built a custom tokenizer for formal notation; implemented multi-head attention and transformer architecture from scratch using PyTorch.</p>
       <div class="ml-metric">22M params &middot; PyTorch &middot; Custom tokenizer</div>
     </div>
     <div class="ml-card reveal">
       <span class="ml-icon">&#8706;</span>
       <div class="ml-title">From-Scratch Regression</div>
-      <p class="ml-detail">Built linear and logistic regression without ML libraries &mdash; derived cost functions, implemented gradient descent and hyperparameter tuning by hand. Strong mathematical foundation in optimization.</p>
+      <p class="ml-detail">Built linear and logistic regression without ML libraries. Derived cost functions, implemented gradient descent and hyperparameter tuning by hand. Strong mathematical foundation in optimization.</p>
       <div class="ml-metric">NumPy &middot; First principles &middot; No sklearn</div>
     </div>
     <div class="ml-card reveal">
