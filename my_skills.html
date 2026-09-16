@@ -9,257 +9,188 @@
   <meta property="og:title" content="Skills — Alexander Radovich">
   <meta property="og:description" content="Skills and technical background — Alexander Radovich.">
   <meta property="og:type" content="website">
-  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,200..800;1,6..72,200..800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 1.5rem;
-      margin-top: 0.5rem;
-    }
-
-    .skill-group {
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-radius: 4px;
-      padding: 1.25rem 1.5rem;
-    }
-
-    .skill-group-title {
-      font-family: var(--mono);
-      font-size: 0.7rem;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      color: var(--red);
-      margin-bottom: 1rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    .skill-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      padding: 0.35rem 0;
-      border-bottom: 1px solid #f0f0ee;
-      font-size: 0.87rem;
-      color: var(--ink-2);
-    }
-
-    .skill-row:last-child { border-bottom: none; }
-
-    .skill-meta {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      color: var(--ink-3);
-      text-align: right;
-      line-height: 1.4;
-    }
-
-    .cert-card {
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-left: 3px solid var(--red);
-      border-radius: 4px;
-      padding: 1.25rem 1.5rem;
-      display: flex;
-      align-items: flex-start;
-      gap: 1rem;
-    }
-
-    .cert-icon {
-      font-family: var(--mono);
-      font-size: 1.2rem;
-      color: var(--red);
-      flex-shrink: 0;
-      margin-top: 0.1rem;
-    }
-
-    .cert-title {
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: var(--ink);
-      margin-bottom: 0.25rem;
-    }
-
-    .cert-org {
-      font-family: var(--mono);
-      font-size: 0.72rem;
-      color: var(--ink-3);
-      margin-bottom: 0.5rem;
-    }
-  </style>
 </head>
 <body>
 
-  <nav>
-    <a href="index.html" class="nav-logo">Alexander Radovich</a>
-    <ul class="nav-links">
-      <li><a href="index.html#experience">Experience</a></li>
-      <li><a href="index.html#projects">Projects</a></li>
-      <li><a href="index.html#ml">ML Work</a></li>
-      <li><a href="my_skills.html">Skills</a></li>
-      <li><a href="about_me.html">About</a></li>
-    </ul>
-  </nav>
+<header class="masthead">
+  <div class="masthead-inner">
+    <a href="index.html" class="masthead-name">Alexander Radovich</a>
+    <nav>
+      <ul class="masthead-nav">
+        <li><a href="index.html#experience">Experience</a></li>
+        <li><a href="index.html#projects">Projects</a></li>
+        <li><a href="index.html#quant">Quant</a></li>
+        <li><a href="index.html#ml">ML Work</a></li>
+        <li><a href="my_skills.html" aria-current="page">Skills</a></li>
+        <li><a href="about_me.html">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <div class="page-header">
-    <div class="page-tag">Technical Profile</div>
-    <h1>Skills &amp; <em>Tools</em></h1>
+<div class="doc">
+
+  <div class="titleblock row">
+    <div class="rail"></div>
+    <div>
+      <h1>Skills &amp; Tools</h1>
+      <p class="affiliation">Technical profile</p>
+    </div>
   </div>
 
-  <main class="container">
-
-    <!-- CERTIFICATIONS -->
-    <div class="content-section reveal">
-      <div class="section-rule">
-        <span class="section-label">Certifications</span>
-      </div>
-      <div class="cert-card">
-        <div class="cert-icon">✦</div>
-        <div>
-          <div class="cert-title">Supervised Machine Learning: Regression and Classification</div>
-          <div class="cert-org">Stanford University Online · DeepLearning.AI · July–August 2024</div>
-          <a href="https://www.coursera.org/account/accomplishments/records/91CYAMOVCXNM"
-             target="_blank"
-             style="font-family:var(--mono);font-size:0.72rem;color:var(--red);">
-            View certificate ↗
-          </a>
-        </div>
-      </div>
+  <!-- CERTIFICATIONS -->
+  <section class="section" id="certifications">
+    <div class="row section-head">
+      <div class="rail"><span class="rail-mark">&sect;1</span></div>
+      <h2>Certifications</h2>
     </div>
+    <article class="row entry">
+      <div class="rail">July – August 2024</div>
+      <div class="body-col">
+        <h3 class="entry-title">Supervised Machine Learning: Regression and Classification</h3>
+        <p class="entry-org">Stanford University Online, DeepLearning.AI</p>
+        <a href="https://www.coursera.org/account/accomplishments/records/91CYAMOVCXNM" target="_blank" rel="noopener" class="entry-link">View certificate</a>
+      </div>
+    </article>
+  </section>
 
-    <!-- PROGRAMMING LANGUAGES -->
-    <div class="content-section reveal">
-      <div class="section-rule">
-        <span class="section-label">Languages</span>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <div class="skill-group-title">Advanced</div>
-          <div class="skill-row"><span>Python</span><span class="skill-meta">5 yrs · Prof / Personal / Academic</span></div>
-          <div class="skill-row"><span>Java</span><span class="skill-meta">3 yrs · Personal / Academic</span></div>
-          <div class="skill-row"><span>HTML</span><span class="skill-meta">3 yrs · Personal</span></div>
-          <div class="skill-row"><span>CSS</span><span class="skill-meta">3 yrs · Personal</span></div>
-          <div class="skill-row"><span>MATLAB</span><span class="skill-meta">3 yrs · Academic</span></div>
-          <div class="skill-row"><span>LaTeX</span><span class="skill-meta">2 yrs · Personal / Academic</span></div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-title">Intermediate</div>
-          <div class="skill-row"><span>C</span><span class="skill-meta">2 yrs · Personal / Academic</span></div>
-          <div class="skill-row"><span>JavaScript</span><span class="skill-meta">2 yrs · Personal</span></div>
-          <div class="skill-row"><span>GDScript</span><span class="skill-meta">4 yrs · Personal</span></div>
-          <div class="skill-row"><span>Assembly</span><span class="skill-meta">1 yr · Academic</span></div>
-          <div class="skill-row"><span>C++</span><span class="skill-meta">1 yr · Personal</span></div>
-          <div class="skill-row"><span>Lua</span><span class="skill-meta">Personal</span></div>
-        </div>
-      </div>
+  <!-- LANGUAGES -->
+  <section class="section" id="languages">
+    <div class="row section-head">
+      <div class="rail"><span class="rail-mark">&sect;2</span></div>
+      <h2>Languages</h2>
     </div>
+    <dl class="deflist">
+      <div class="row defrow">
+        <dt>Advanced</dt>
+        <dd><ul class="runlist">
+          <li>Python <span class="qual">5 yrs, prof / personal / academic</span></li><li>Java <span class="qual">3 yrs, personal / academic</span></li><li>HTML <span class="qual">3 yrs, personal</span></li><li>CSS <span class="qual">3 yrs, personal</span></li><li>MATLAB <span class="qual">3 yrs, academic</span></li><li>LaTeX <span class="qual">2 yrs, personal / academic</span></li>
+        </ul></dd>
+      </div>
+      <div class="row defrow">
+        <dt>Intermediate</dt>
+        <dd><ul class="runlist">
+          <li>C++ <span class="qual">prof / personal</span></li><li>C <span class="qual">2 yrs, personal / academic</span></li><li>SQL <span class="qual">prof / personal</span></li><li>JavaScript <span class="qual">2 yrs, personal</span></li><li>GDScript <span class="qual">4 yrs, personal</span></li><li>Assembly <span class="qual">1 yr, academic</span></li><li>Lua <span class="qual">personal</span></li>
+        </ul></dd>
+      </div>
+    </dl>
+  </section>
 
-    <!-- ML / DATA -->
-    <div class="content-section reveal">
-      <div class="section-rule">
-        <span class="section-label">ML &amp; Data</span>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <div class="skill-group-title">Frameworks</div>
-          <div class="skill-row"><span>PyTorch</span><span class="skill-meta">Personal</span></div>
-          <div class="skill-row"><span>scikit-learn</span><span class="skill-meta">Prof / Personal</span></div>
-          <div class="skill-row"><span>NumPy</span><span class="skill-meta">2 yrs · Prof / Personal</span></div>
-          <div class="skill-row"><span>XGBoost</span><span class="skill-meta">1 yr · Prof / Personal</span></div>
-          <div class="skill-row"><span>FastAPI</span><span class="skill-meta">Personal</span></div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-title">Environments</div>
-          <div class="skill-row"><span>Jupyter Notebooks</span><span class="skill-meta">1 yr · Prof / Personal</span></div>
-          <div class="skill-row"><span>Anaconda</span><span class="skill-meta">Personal</span></div>
-          <div class="skill-row"><span>Power BI</span><span class="skill-meta">Professional</span></div>
-          <div class="skill-row"><span>Linux Systems</span><span class="skill-meta">Personal</span></div>
-        </div>
-      </div>
+  <!-- ML & DATA -->
+  <section class="section" id="ml-data">
+    <div class="row section-head">
+      <div class="rail"><span class="rail-mark">&sect;3</span></div>
+      <h2>ML &amp; Data</h2>
     </div>
+    <dl class="deflist">
+      <div class="row defrow">
+        <dt>Frameworks</dt>
+        <dd><ul class="runlist">
+          <li>PyTorch <span class="qual">research / personal</span></li><li>HuggingFace Transformers <span class="qual">research</span></li><li>scikit-learn <span class="qual">prof / personal</span></li><li>XGBoost <span class="qual">1 yr, prof / personal</span></li><li>hmmlearn / pykan <span class="qual">personal</span></li><li>FastAPI <span class="qual">personal</span></li>
+        </ul></dd>
+      </div>
+      <div class="row defrow">
+        <dt>Deep learning</dt>
+        <dd><ul class="runlist">
+          <li>Vision-Language Models <span class="qual">research</span></li><li>Contrastive Decoding <span class="qual">research</span></li><li>Attention Mechanisms <span class="qual">research / personal</span></li><li>KV-Cache <span class="qual">research</span></li><li>Mixed-Precision Inference <span class="qual">research</span></li><li>Neural Network Design <span class="qual">prof / personal</span></li>
+        </ul></dd>
+      </div>
+      <div class="row defrow">
+        <dt>Data</dt>
+        <dd><ul class="runlist">
+          <li>NumPy <span class="qual">2 yrs, prof / personal</span></li><li>Pandas <span class="qual">prof / personal</span></li><li>Matplotlib <span class="qual">prof / personal</span></li><li>Jupyter Notebooks <span class="qual">1 yr, prof / personal</span></li><li>Anaconda <span class="qual">personal</span></li><li>Power BI <span class="qual">professional</span></li>
+        </ul></dd>
+      </div>
+    </dl>
+  </section>
 
-    <!-- DEV TOOLS -->
-    <div class="content-section reveal">
-      <div class="section-rule">
-        <span class="section-label">Dev Tools &amp; Infrastructure</span>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <div class="skill-group-title">Version Control / Infra</div>
-          <div class="skill-row"><span>Git / GitHub</span><span class="skill-meta">4 yrs · Personal</span></div>
-          <div class="skill-row"><span>MongoDB</span><span class="skill-meta">2 yrs · Personal</span></div>
-          <div class="skill-row"><span>Firebase</span><span class="skill-meta">2 yrs · Personal</span></div>
-          <div class="skill-row"><span>PostgreSQL</span><span class="skill-meta">Personal</span></div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-title">Frontend / Workflow</div>
-          <div class="skill-row"><span>React</span><span class="skill-meta">1 yr · Personal</span></div>
-          <div class="skill-row"><span>Figma</span><span class="skill-meta">1 yr · Prof / Personal</span></div>
-          <div class="skill-row"><span>Scrum / Agile</span><span class="skill-meta">1 yr · Prof / Personal</span></div>
-          <div class="skill-row"><span>Slack</span><span class="skill-meta">1 yr · Prof / Personal</span></div>
-        </div>
-      </div>
+  <!-- DEV TOOLS -->
+  <section class="section" id="infra">
+    <div class="row section-head">
+      <div class="rail"><span class="rail-mark">&sect;4</span></div>
+      <h2>Dev Tools &amp; Infrastructure</h2>
     </div>
+    <dl class="deflist">
+      <div class="row defrow">
+        <dt>Research infrastructure</dt>
+        <dd><ul class="runlist">
+          <li>VLMEvalKit <span class="qual">research</span></li><li>Slurm <span class="qual">research</span></li><li>Docker <span class="qual">research</span></li><li>CUDA <span class="qual">research</span></li><li>Kubernetes <span class="qual">professional</span></li><li>CI / CD <span class="qual">prof / personal</span></li>
+        </ul></dd>
+      </div>
+      <div class="row defrow">
+        <dt>Version control &amp; storage</dt>
+        <dd><ul class="runlist">
+          <li>Git / GitHub <span class="qual">4 yrs, personal</span></li><li>Linux Systems <span class="qual">research / personal</span></li><li>PostgreSQL <span class="qual">personal</span></li><li>MongoDB <span class="qual">2 yrs, personal</span></li><li>Firebase <span class="qual">2 yrs, personal</span></li>
+        </ul></dd>
+      </div>
+      <div class="row defrow">
+        <dt>Frontend &amp; workflow</dt>
+        <dd><ul class="runlist">
+          <li>React <span class="qual">1 yr, personal</span></li><li>Figma <span class="qual">1 yr, prof / personal</span></li><li>Scrum / Agile <span class="qual">1 yr, prof / personal</span></li><li>Slack <span class="qual">1 yr, prof / personal</span></li>
+        </ul></dd>
+      </div>
+    </dl>
+  </section>
 
-    <!-- MATHEMATICS -->
-    <div class="content-section reveal">
-      <div class="section-rule">
-        <span class="section-label">Mathematics</span>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <div class="skill-group-title">Applied Math</div>
-          <div class="skill-row"><span>Linear Algebra</span><span class="skill-meta">3 yrs · Prof / Personal / Academic</span></div>
-          <div class="skill-row"><span>Calculus I–III</span><span class="skill-meta">4 yrs · Academic</span></div>
-          <div class="skill-row"><span>Numerical Analysis</span><span class="skill-meta">Academic</span></div>
-          <div class="skill-row"><span>Mathematical Modeling</span><span class="skill-meta">2 yrs · Academic</span></div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-title">Discrete / Theory</div>
-          <div class="skill-row"><span>Graph Theory</span><span class="skill-meta">1 yr · Personal / Academic</span></div>
-          <div class="skill-row"><span>Combinatorics</span><span class="skill-meta">Academic</span></div>
-          <div class="skill-row"><span>Discrete Mathematics</span><span class="skill-meta">Academic</span></div>
-          <div class="skill-row"><span>Algorithms</span><span class="skill-meta">Academic</span></div>
-        </div>
-      </div>
+  <!-- MATHEMATICS -->
+  <section class="section" id="mathematics">
+    <div class="row section-head">
+      <div class="rail"><span class="rail-mark">&sect;5</span></div>
+      <h2>Mathematics</h2>
     </div>
+    <dl class="deflist">
+      <div class="row defrow">
+        <dt>Applied math</dt>
+        <dd><ul class="runlist">
+          <li>Real Analysis <span class="qual">academic</span></li><li>Linear Algebra <span class="qual">3 yrs, prof / personal / academic</span></li><li>Calculus I–III <span class="qual">4 yrs, academic</span></li><li>Numerical Analysis <span class="qual">academic</span></li><li>Mathematical Modeling <span class="qual">2 yrs, academic</span></li>
+        </ul></dd>
+      </div>
+      <div class="row defrow">
+        <dt>Discrete &amp; theory</dt>
+        <dd><ul class="runlist">
+          <li>Graph Theory <span class="qual">1 yr, personal / academic</span></li><li>Statistics <span class="qual">academic</span></li><li>Combinatorics <span class="qual">academic</span></li><li>Discrete Mathematics <span class="qual">academic</span></li><li>Algorithms <span class="qual">academic</span></li>
+        </ul></dd>
+      </div>
+    </dl>
+  </section>
 
-    <!-- GAME DEV -->
-    <div class="content-section reveal">
-      <div class="section-rule">
-        <span class="section-label">Game Development</span>
-      </div>
-      <div class="skills-grid">
-        <div class="skill-group">
-          <div class="skill-group-title">Engines</div>
-          <div class="skill-row"><span>Godot</span><span class="skill-meta">3 yrs · Personal</span></div>
-          <div class="skill-row"><span>Unity</span><span class="skill-meta">2 yrs · Personal</span></div>
-        </div>
-        <div class="skill-group">
-          <div class="skill-group-title">Tools</div>
-          <div class="skill-row"><span>Blender</span><span class="skill-meta">1 yr · Personal</span></div>
-          <div class="skill-row"><span>Lua</span><span class="skill-meta">Personal</span></div>
-        </div>
-      </div>
+  <!-- GAME DEV -->
+  <section class="section" id="gamedev">
+    <div class="row section-head">
+      <div class="rail"><span class="rail-mark">&sect;6</span></div>
+      <h2>Game Development</h2>
     </div>
+    <dl class="deflist">
+      <div class="row defrow">
+        <dt>Engines</dt>
+        <dd><ul class="runlist">
+          <li>Godot <span class="qual">3 yrs, personal</span></li><li>Unity <span class="qual">2 yrs, personal</span></li>
+        </ul></dd>
+      </div>
+      <div class="row defrow">
+        <dt>Tools</dt>
+        <dd><ul class="runlist">
+          <li>Blender <span class="qual">1 yr, personal</span></li><li>Lua <span class="qual">personal</span></li>
+        </ul></dd>
+      </div>
+    </dl>
+  </section>
 
-  </main>
+  <footer class="colophon">
+    <span>Alexander Radovich</span>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="https://github.com/AlexRadovich" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://www.linkedin.com/in/alexander-radovich-455846294/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="Alexander_Radovich_Resume.pdf" download>Resume</a>
+    </nav>
+  </footer>
 
-  <script>
-    const reveals = document.querySelectorAll('.reveal');
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((e, i) => {
-        if (e.isIntersecting) {
-          setTimeout(() => e.target.classList.add('visible'), i * 80);
-          io.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.06 });
-    reveals.forEach(el => io.observe(el));
-  </script>
+</div>
 
 </body>
 </html>
